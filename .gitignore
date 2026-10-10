@@ -1,6 +1,9 @@
 # Alternate / Prototype Site Folder
 land-clearing-charlotte/
 
+# Agents / Workspace Skills
+.agents/
+
 # Operating System Files
 Thumbs.db
 Thumbs.db:encryptable

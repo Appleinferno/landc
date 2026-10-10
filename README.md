@@ -9,7 +9,6 @@ Lead-generation and silo-structured web platform for **Charlotte Land Clearing**
 - **`charlotte-land-clearing/`**: The complete production multi-page silo website containing over 20 localized service pages, canonical styling (`style.css`), service styling (`service-page.css`), and interactive quote scripting (`site.js`).
 - **`docs/`**: Comprehensive content silo architectures, prompt templates, and SEO keyword mapping.
 - **`images/`**: High-resolution photography assets from local North Carolina land clearing job sites.
-- **`.agents/`**: Workspace agent skills and design configurations.
 
 ---
 
