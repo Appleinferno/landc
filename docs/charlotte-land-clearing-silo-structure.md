@@ -1,6 +1,6 @@
 # Charlotte Land Clearing — Silo Structure
 
-**Domain:** `charlottelandclearing.com`
+**Domain:** `landclearingcharlotte.com`
 **Site type:** Local SEO lead generation
 **Main city:** Charlotte, NC
 **Primary phone:** `(828) 576-3931` (`tel:8285763931` · JSON-LD: `+1-828-576-3931`)

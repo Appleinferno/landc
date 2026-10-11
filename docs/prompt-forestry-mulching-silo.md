@@ -4,7 +4,7 @@ Copy everything below the line into a new chat.
 
 ---
 
-You are continuing work on **charlottelandclearing.com**, a static HTML SEO lead-gen site for a land clearing company. Project folder: `h:\Websites\landc\charlotte-land-clearing\`. Read these before writing anything:
+You are continuing work on **landclearingcharlotte.com**, a static HTML SEO lead-gen site for a land clearing company. Project folder: `h:\Websites\landc\charlotte-land-clearing\`. Read these before writing anything:
 
 - `h:\Websites\landc\docs\charlotte-land-clearing-silo-structure.md`: the approved silo rules
 - `charlotte-land-clearing/forestry-mulching-charlotte-nc/index.html`: the **parent pillar** for this silo, already built

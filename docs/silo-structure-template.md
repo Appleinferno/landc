@@ -36,7 +36,7 @@ Use this template to plan the site structure for a **new local service business*
 | City tier (1 = large metro, 2 = mid city, 3 = small city) | `{{TIER}}` |
 | Does the domain contain the main city + service? (yes/no) | `{{EXACT_MATCH_DOMAIN}}` |
 
-> If the domain is an exact match (e.g., *charlottelandclearing.com*), the homepage becomes the **brand overview**, and the core pillar owns the "{service} {city}" keyword.
+> If the domain is an exact match (e.g., *landclearingcharlotte.com*), the homepage becomes the **brand overview**, and the core pillar owns the "{service} {city}" keyword.
 
 ## A3. Core services (silos)
 

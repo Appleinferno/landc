@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AI AGENTS / CONTRIBUTORS: this sitemap must stay in sync with the site.
+  - When you ADD a page (a new folder with an index.html), add a <url> entry here.
+  - When you DELETE, rename or redirect a page, remove or update its <url> entry here.
+  - When you materially edit a page, update its <lastmod>.
+  - Do not list noindex pages or the legal pages (privacy, cookies, terms).
+  - Entries use the canonical form: https://landclearingcharlotte.com/{slug}/ (trailing slash).
+  See /AGENTS.md at the repo root for the full checklist.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://landclearingcharlotte.com/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/brush-clearing-charlotte-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/forestry-mulching-charlotte-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/land-clearing-charlotte-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/acreage-clearing-charlotte-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/commercial-land-clearing-charlotte-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/driveway-clearing-charlotte-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/firebreak-clearing-charlotte-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/food-plot-clearing-charlotte-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/lakefront-lot-clearing-charlotte-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/lot-clearing-charlotte-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/outbuilding-site-clearing-charlotte-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/pasture-clearing-charlotte-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/right-of-way-clearing-charlotte-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/selective-clearing-charlotte-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/stump-grinding-charlotte-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/survey-line-clearing-charlotte-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/trail-cutting-charlotte-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/underbrush-clearing-charlotte-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/woodland-thinning-charlotte-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/land-clearing-huntersville-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/land-clearing-mint-hill-nc/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://landclearingcharlotte.com/lot-clearing-tips/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.5</priority>
+  </url>
+</urlset>
