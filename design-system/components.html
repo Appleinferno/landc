@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Library | Land Clearing Charlotte Design System</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="components.css">
+  <style>
+    /* Library-only helpers (ds-*); not part of the site */
+    .ds-block { background: var(--ds-white); padding: 56px 0; border-bottom: 1px solid var(--ds-slate-200); }
+    .ds-wrap { max-width: var(--ds-container-max); margin: 0 auto; padding: 0 var(--ds-container-pad); }
+    .ds-kicker { font-size: .78rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--ds-gold-ink); }
+    .ds-h1 { font-size: var(--ds-text-hero); color: var(--ds-navy-800); margin: .2em 0; letter-spacing: -.02em; }
+    .ds-h2 { font-size: 1.4rem; color: var(--ds-navy-800); margin: 48px 0 16px; padding-top: 24px; border-top: 1px dashed var(--ds-slate-300); }
+    .ds-lead { font-size: 1.08rem; max-width: 760px; }
+    .ds-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+    .ds-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 16px; }
+    .ds-swatch { display: flex; flex-direction: column; gap: 2px; font-size: .84rem; }
+    .ds-swatch__chip { height: 72px; border-radius: 12px; border: 1px solid var(--ds-slate-200); margin-bottom: 6px; }
+    .ds-swatch strong { color: var(--ds-navy-800); }
+    .ds-swatch small { color: var(--ds-slate-500); }
+    .ds-label { display: flex; justify-content: space-between; gap: 12px; align-items: center; background: var(--ds-navy-800); color: var(--ds-gold-400); font: 800 .78rem/1.4 var(--ds-font-sans); letter-spacing: .1em; text-transform: uppercase; padding: 10px var(--ds-container-pad); }
+    .ds-label code { color: var(--ds-slate-275); text-transform: none; letter-spacing: 0; font-weight: 600; }
+    .mobile-sticky-cta { display: grid !important; position: static !important; }
+  </style>
+</head>
+<body>
+
+  <section class="ds-block">
+    <div class="ds-wrap">
+      <span class="ds-kicker">Land Clearing Charlotte &middot; Design System</span>
+      <h1 class="ds-h1">Component library</h1>
+      <p class="ds-lead">Every component below is the real markup from the live site, styled by <code>tokens.css</code> + <code>components.css</code>. Use these class names when designing new pages.</p>
+
+      <h2 class="ds-h2">Logo</h2>
+      <div class="ds-row">
+        <img src="assets/logo.svg" alt="Land Clearing Charlotte logo" width="356" height="82">
+        <span style="background:var(--ds-navy-900);padding:14px;border-radius:14px;display:inline-flex"><img src="assets/logo-on-navy.svg" alt="Land Clearing Charlotte logo on navy" width="356" height="82"></span>
+        <img src="assets/app-icon.svg" alt="App icon" width="64" height="64">
+        <img src="assets/favicon.svg" alt="Favicon" width="32" height="32">
+      </div>
+
+      <h2 class="ds-h2">Color</h2>
+      <div class="ds-swatches"><div class="ds-swatch"><div class="ds-swatch__chip" style="background:#121E33"></div><strong>--ds-navy-900</strong><code>#121E33</code><small>Hero / footer bg</small><small>on white 16.68 &middot; on navy 1.18</small></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:#1B2B48"></div><strong>--ds-navy-800</strong><code>#1B2B48</code><small>Headings, primary dark</small><small>on white 14.13 &middot; on navy 1.00</small></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:#24395E"></div><strong>--ds-navy-700</strong><code>#24395E</code><small>Hover on navy</small><small>on white 11.53 &middot; on navy 1.23</small></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:#F2C84B"></div><strong>--ds-gold-400</strong><code>#F2C84B</code><small>Accent, primary CTA</small><small>on white 1.60 &middot; on navy 8.84</small></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:#E0B431"></div><strong>--ds-gold-500</strong><code>#E0B431</code><small>Gold hover, decorative arrows</small><small>on white 1.95 &middot; on navy 7.23</small></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:#8A6A0A"></div><strong>--ds-gold-ink</strong><code>#8A6A0A</code><small>NEW: gold text on light</small><small>on white 5.06 &middot; on navy 2.79</small></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:#FFF8E1"></div><strong>--ds-gold-50</strong><code>#FFF8E1</code><small>Pillar card tint</small><small>on white 1.06 &middot; on navy 13.30</small></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:#51607A"></div><strong>--ds-slate-600</strong><code>#51607A</code><small>Body text</small><small>on white 6.36 &middot; on navy 2.22</small></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:#64748B"></div><strong>--ds-slate-500</strong><code>#64748B</code><small>Muted text</small><small>on white 4.76 &middot; on navy 2.97</small></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:#CBD5E1"></div><strong>--ds-slate-300</strong><code>#CBD5E1</code><small>Input border</small><small>on white 1.48 &middot; on navy 9.52</small></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:#E2E8F0"></div><strong>--ds-slate-200</strong><code>#E2E8F0</code><small>Subtle border</small><small>on white 1.23 &middot; on navy 11.47</small></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:#F1F4F9"></div><strong>--ds-slate-100</strong><code>#F1F4F9</code><small>Subtle surface</small><small>on white 1.10 &middot; on navy 12.82</small></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:#F8F9FB"></div><strong>--ds-slate-25</strong><code>#F8F9FB</code><small>Page bg (tint)</small><small>on white 1.05 &middot; on navy 13.42</small></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:#FFFFFF"></div><strong>--ds-white</strong><code>#FFFFFF</code><small>Surface</small><small>on white 1.00 &middot; on navy 14.13</small></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:#2F855A"></div><strong>--ds-green-600</strong><code>#2F855A</code><small>Forestry silo / current</small><small>on white 4.54 &middot; on navy 3.11</small></div><div class="ds-swatch"><div class="ds-swatch__chip" style="background:#C05621"></div><strong>--ds-orange-600</strong><code>#C05621</code><small>Brush silo</small><small>on white 4.57 &middot; on navy 3.09</small></div></div>
+
+      <h2 class="ds-h2">Typography (system font stack)</h2>
+      <div class="ds-type">
+        <span class="svc-eyebrow">Eyebrow &middot; .78rem / 800 / .14em</span>
+        <p style="font-size:var(--ds-text-hero);font-weight:800;line-height:1.08;letter-spacing:-.02em;color:var(--ds-navy-800);margin:.4em 0">Hero title <span style="color:var(--ds-gold-400);background:var(--ds-navy-900);padding:0 .2em;border-radius:8px">gold span</span></p>
+        <p style="font-size:var(--ds-text-h2);font-weight:800;line-height:1.15;color:var(--ds-navy-800);margin:.3em 0">Section H2 heading</p>
+        <p style="font-size:var(--ds-text-h3);font-weight:800;color:var(--ds-navy-800);margin:.3em 0">Prose H3 &middot; 1.32rem</p>
+        <p style="font-size:var(--ds-text-card);font-weight:800;color:var(--ds-navy-800);margin:.3em 0">Card title &middot; 1.12rem</p>
+        <p style="font-size:var(--ds-text-lead);line-height:1.75;margin:.3em 0">Lead body &middot; 1.08rem / 1.75. Owner on every job, firm written pricing, erosion-smart clearing.</p>
+        <p style="font-size:var(--ds-text-prose);line-height:1.8;margin:.3em 0">Prose &middot; 1.04rem / 1.8. Used in long-form service copy.</p>
+        <p style="font-size:var(--ds-text-small);margin:.3em 0">Small &middot; .92rem</p>
+        <p style="font-size:var(--ds-text-micro);font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin:.3em 0">Micro tag &middot; .7rem</p>
+      </div>
+
+      <h2 class="ds-h2">Buttons</h2>
+      <div class="ds-row">
+        <a class="svc-btn svc-btn--gold" href="#">Get My Free Estimate</a>
+        <a class="svc-btn svc-btn--navy" href="#">Call (828) 576-3931</a>
+        <span style="background:var(--ds-navy-900);padding:14px;border-radius:14px"><a class="svc-btn svc-btn--ghost" href="#">Ghost on dark</a></span>
+        <a class="site-navigation__action-btn--pill-gold" href="#">Free On-Site Estimate</a>
+      </div>
+
+      <h2 class="ds-h2">Homepage silo card + tag pills</h2>
+      <ul class="service-catalog__grid-wrapper--three-columns" style="padding:0">
+        <li class="service-catalog__grid-card--elevated-white">
+          <h3 class="service-catalog__card-title--navy-bold">Land Clearing</h3>
+          <p class="service-catalog__card-text--slate-regular">Lot, acreage and commercial clearing with keeper trees protected.</p>
+          <nav class="service-catalog__service-tags" aria-label="Land clearing services">
+            <a class="service-catalog__tag-pill" href="#">Residential Lot Clearing</a>
+            <a class="service-catalog__tag-pill" href="#">Acreage Clearing</a>
+            <a class="service-catalog__tag-pill" href="#">Stump Grinding &amp; Removal</a>
+          </nav>
+          <a class="service-catalog__card-action--arrow-slide-link" href="#">Land clearing in Charlotte, NC</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="ds-label"><span>Topbar</span><code>.site-topbar</code></div>
+  <aside class="site-topbar" aria-label="Announcement &amp; Direct Contact">
+    <div class="site-topbar__inner-container">
+      <div class="site-topbar__left-info">
+        <span class="site-topbar__left-badge--gold-accent">Fast Response</span>
+        <span>Serving Charlotte, Mecklenburg, Union, Cabarrus &amp; Gaston Counties</span>
+      </div>
+      <div class="site-topbar__right-contact">
+        <span>Direct Owner Line:</span>
+        <a class="site-topbar__right-link--text-light" href="tel:8285763931">(828) 576-3931</a>
+        <span>&bull;</span>
+        <a class="site-topbar__right-link--text-light" href="#estimate">Get Free Estimate</a>
+      </div>
+    </div>
+  </aside>
+
+  <div class="ds-label"><span>Navigation (desktop; drawer + phone button under 960px)</span><code>.site-navigation</code></div>
+  <header class="site-navigation">
+    <div class="site-navigation__inner-container">
+      <a class="site-navigation__brand-zone" href="#">
+        <img class="site-navigation__brand-logo" src="assets/logo.svg" alt="Land Clearing Charlotte" width="356" height="82">
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul class="site-navigation__menu-zone">
+          <li><a class="site-navigation__menu-link--navy-hover" href="#" aria-current="page">Land Clearing</a></li>
+          <li><a class="site-navigation__menu-link--navy-hover" href="#">Forestry Mulching</a></li>
+          <li><a class="site-navigation__menu-link--navy-hover" href="#">Brush Clearing</a></li>
+          <li><a class="site-navigation__menu-link--navy-hover" href="#">Lot Clearing Tips</a></li>
+        </ul>
+      </nav>
+      <div class="site-navigation__action-zone">
+        <a class="site-navigation__action-btn--pill-gold site-navigation__action-btn--desktop-only" href="#estimate">Free On-Site Estimate</a>
+        <a class="site-navigation__mobile-phone-btn" href="tel:8285763931" aria-label="Call (828) 576-3931">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </a>
+        <button class="site-navigation__mobile-toggle" id="clc-mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="clc-mobile-drawer">
+          <span class="site-navigation__hamburger-bar"></span>
+          <span class="site-navigation__hamburger-bar"></span>
+          <span class="site-navigation__hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+    <div class="site-navigation__mobile-drawer" id="clc-mobile-drawer" aria-hidden="true">
+      <ul class="site-navigation__mobile-menu">
+        <li><a class="site-navigation__mobile-link" href="#">Land Clearing</a></li>
+        <li><a class="site-navigation__mobile-link" href="#">Forestry Mulching</a></li>
+        <li><a class="site-navigation__mobile-link" href="#">Brush Clearing</a></li>
+        <li><a class="site-navigation__mobile-link" href="#">Lot Clearing Tips</a></li>
+      </ul>
+      <div class="site-navigation__mobile-actions">
+        <a class="site-navigation__mobile-call-btn" href="tel:8285763931">Call (828) 576-3931</a>
+        <a class="site-navigation__mobile-quote-btn" href="#estimate">Free On-Site Estimate</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. HERO -->
+    <div class="ds-label"><span>Service hero + estimate form card</span><code>.svc-hero / .svc-form-card</code></div>
+  <section class="svc-hero" aria-labelledby="page-title">
+      <div class="svc-hero__bg"><img src="assets/images/full-lot-clearing.jpg" alt="" aria-hidden="true"></div>
+      <div class="svc-container svc-hero__inner">
+        <div>
+          <span class="svc-hero__eyebrow">One Lot &middot; One House &middot; Done Right</span>
+          <h1 class="svc-hero__title" id="page-title">Residential Lot Clearing in <span>Charlotte, NC</span></h1>
+          <div class="svc-hero__lead">
+            <p>You've closed on a lot in Charlotte and the plans are drawn. Now the trees, scrub, and leftover brush have to come off the part where the house, driveway, and yard will go, without taking the oaks you paid a premium for or giving the neighbors a reason to call the city.</p>
+            <p>We clear single residential lots, most under an acre, from older in-town streets to wooded parcels in newer subdivisions. You get the building envelope opened up exactly where your builder needs it, and a lot that's ready for the next crew.</p>
+          </div>
+          <div class="svc-hero__actions">
+            <a class="svc-btn svc-btn--gold" href="#estimate">Get My Free Estimate</a>
+            <a class="svc-btn svc-btn--ghost" href="tel:8285763931">Call (828) 576-3931</a>
+          </div>
+          <ul class="svc-hero__checks">
+            <li>Footprint cleared to your plans</li>
+            <li>Keeper trees flagged first</li>
+            <li>Builder-ready hand-off</li>
+          </ul>
+        </div>
+
+        <div class="svc-form-card" id="estimate">
+          <h2 class="svc-form-card__title">Get a Free Lot Clearing Estimate</h2>
+          <p class="svc-form-card__sub">Send us the lot address and your plans if you have them. We'll call within one business day to set up a walk-through.</p>
+          <form action="#" method="post" data-estimate-form>
+            <div class="svc-form__grid">
+              <div class="svc-form__field">
+                <label class="svc-form__label" for="f-name">Full Name</label>
+                <input class="svc-form__input" id="f-name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="svc-form__field">
+                <label class="svc-form__label" for="f-phone">Phone</label>
+                <input class="svc-form__input" id="f-phone" name="phone" type="tel" autocomplete="tel" required>
+              </div>
+              <div class="svc-form__field">
+                <label class="svc-form__label" for="f-service">Service Needed</label>
+                <select class="svc-form__select" id="f-service" name="service">
+                  <option selected>Land Clearing</option>
+                  <option>Forestry Mulching</option>
+                  <option>Brush Clearing</option>
+                  <option>Right-of-Way Clearing</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div class="svc-form__field">
+                <label class="svc-form__label" for="f-size">Property Size</label>
+                <select class="svc-form__select" id="f-size" name="size">
+                  <option>Under 1 acre</option>
+                  <option>1 to 3 acres</option>
+                  <option>3 to 10 acres</option>
+                  <option>10+ acres</option>
+                  <option>Not sure</option>
+                </select>
+              </div>
+              <div class="svc-form__field svc-form__field--full">
+                <label class="svc-form__label" for="f-address">Property Address or Area</label>
+                <input class="svc-form__input" id="f-address" name="address" type="text" placeholder="Street, neighborhood, or ZIP in Charlotte">
+              </div>
+              <div class="svc-form__field svc-form__field--full">
+                <label class="svc-form__label" for="f-notes">What are you building on the lot?</label>
+                <textarea class="svc-form__textarea" id="f-notes" name="notes" placeholder="New home, teardown rebuild, house plans attached, trees we want to keep, builder start date..."></textarea>
+              </div>
+            </div>
+            <button class="svc-form__submit" type="submit">Request My Free Estimate</button>
+            <p class="svc-form__fine">No obligation. Prefer to talk? Call <a href="tel:8285763931">(828) 576-3931</a>.</p>
+          </form>
+          <div class="svc-form__success" role="status">
+            <h3>Thanks, we've got it.</h3>
+            <p>We'll look up the lot, review anything you sent, and call within one business day to schedule a time to walk it with you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. TRUST BAR -->
+    <!-- TODO: real Google rating. Add rating + review count as the first item once available. -->
+    <div class="ds-label"><span>Trust bar</span><code>.svc-trust</code></div>
+  <section class="svc-trust" aria-label="Why customers trust us">
+      <ul class="svc-container svc-trust__list">
+        <li class="svc-trust__item">
+          <span class="svc-trust__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+          <span class="svc-trust__text"><strong>Owner on Every Job</strong><span>He walks your lot and runs the machine</span></span>
+        </li>
+        <li class="svc-trust__item">
+          <span class="svc-trust__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/></svg></span>
+          <span class="svc-trust__text"><strong>Licensed &amp; Insured</strong><span>COI sent to your builder or HOA</span></span>
+        </li>
+        <li class="svc-trust__item">
+          <span class="svc-trust__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span>
+          <span class="svc-trust__text"><strong>Free On-Site Estimates</strong><span>Clearing limits marked with you</span></span>
+        </li>
+        <li class="svc-trust__item">
+          <span class="svc-trust__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 17h18M5 17V9l7-5 7 5v8"/></svg></span>
+          <span class="svc-trust__text"><strong>Builder-Ready Lots</strong><span>Cleared to the footprint, nothing more</span></span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 4. WHAT OUR PROCESS IS (sub-service: compact) -->
+    <div class="ds-label"><span>Process steps (compact)</span><code>.svc-steps.svc-steps--compact</code></div>
+  <section class="svc-section svc-section--tint" aria-labelledby="process-title">
+      <div class="svc-container">
+        <div class="svc-head">
+          <span class="svc-eyebrow">How It Works</span>
+          <h2 class="svc-h2" id="process-title">What Our Residential Lot Clearing Process Is</h2>
+          <p>A residential lot leaves little room for error. These four steps keep the clearing inside your plans and the rest of the lot untouched.</p>
+        </div>
+        <ol class="svc-steps svc-steps--compact">
+          <li class="svc-step">
+            <span class="svc-step__num">01</span>
+            <h3 class="svc-step__title">Read the Plans</h3>
+            <p class="svc-step__text">We look at your plot plan or house plans together and agree on the envelope: footprint, driveway, yard, and working room.</p>
+          </li>
+          <li class="svc-step">
+            <span class="svc-step__num">02</span>
+            <h3 class="svc-step__title">Mark the Limits</h3>
+            <p class="svc-step__text">Clearing limits and keeper trees are flagged on the ground so you, your builder, and the neighbors can see the plan.</p>
+          </li>
+          <li class="svc-step">
+            <span class="svc-step__num">03</span>
+            <h3 class="svc-step__title">Clear the Envelope</h3>
+            <p class="svc-step__text">Compact tracked equipment takes down trees and brush inside the limits and stays off the root zones outside them.</p>
+          </li>
+          <li class="svc-step">
+            <span class="svc-step__num">04</span>
+            <h3 class="svc-step__title">Walk It With Your Builder</h3>
+            <p class="svc-step__text">We confirm the lot matches the plan so framing, grading, or utility crews can start without redoing anything.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 5. WHERE WE SERVE (pillar card FIRST, then town pages, proposed until built) -->
+    <div class="ds-label"><span>Where We Serve: pillar / live / proposed area cards</span><code>.svc-area-card</code></div>
+  <section class="svc-section svc-section--white" aria-labelledby="areas-title">
+      <div class="svc-container">
+        <div class="svc-head">
+          <span class="svc-eyebrow">Service Area</span>
+          <h2 class="svc-h2" id="areas-title">Where We Serve for Residential Lot Clearing</h2>
+          <p>We clear residential lots across every Charlotte neighborhood and in the towns below. Those town pages are on the way, so the main land clearing page is the best place to start for the full overview.</p>
+        </div>
+        <div class="svc-areas">
+          <a class="svc-area-card svc-area-card--pillar" href="#">
+            <span class="svc-area-card__label">Main Service Page</span>
+            <span class="svc-area-card__name">Land Clearing in Charlotte, NC</span>
+            <span class="svc-area-card__meta">All of Charlotte &amp; Mecklenburg County</span>
+          </a>
+          <div class="svc-area-card svc-area-card--proposed" data-href="#">
+            <span class="svc-area-card__label">Service Area</span>
+            <span class="svc-area-card__name">Residential Lot Clearing in Huntersville, NC</span>
+            <span class="svc-area-card__meta">North Mecklenburg &middot; Lake Norman</span>
+          </div>
+          <div class="svc-area-card svc-area-card--proposed" data-href="#">
+            <span class="svc-area-card__label">Service Area</span>
+            <span class="svc-area-card__name">Residential Lot Clearing in Mint Hill, NC</span>
+            <span class="svc-area-card__meta">East Mecklenburg</span>
+          </div>
+          <div class="svc-area-card svc-area-card--proposed" data-href="#">
+            <span class="svc-area-card__label">Service Area</span>
+            <span class="svc-area-card__name">Residential Lot Clearing in Waxhaw, NC</span>
+            <span class="svc-area-card__meta">Western Union County</span>
+          </div>
+          <div class="svc-area-card svc-area-card--proposed" data-href="#">
+            <span class="svc-area-card__label">Service Area</span>
+            <span class="svc-area-card__name">Residential Lot Clearing in Concord, NC</span>
+            <span class="svc-area-card__meta">Cabarrus County</span>
+          </div>
+          <div class="svc-area-card svc-area-card--proposed" data-href="#">
+            <span class="svc-area-card__label">Service Area</span>
+            <span class="svc-area-card__name">Residential Lot Clearing in Mooresville, NC</span>
+            <span class="svc-area-card__meta">Iredell County &middot; Lake Norman</span>
+          </div>
+          <div class="svc-area-card svc-area-card--proposed" data-href="#">
+            <span class="svc-area-card__label">Service Area</span>
+            <span class="svc-area-card__name">Residential Lot Clearing in Indian Trail, NC</span>
+            <span class="svc-area-card__meta">Union County</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CONTINUING COPY (unique to this sub-service, no links in body copy) -->
+    <div class="ds-label"><span>Continuing copy: split, figure, callout</span><code>.svc-split / .svc-figure / .svc-callout</code></div>
+  <section class="svc-section svc-section--tint" aria-labelledby="depth-title">
+      <div class="svc-container">
+        <div class="svc-head">
+          <span class="svc-eyebrow">Lot-Clearing Know-How</span>
+          <h2 class="svc-h2" id="depth-title">Clearing a Single Residential Lot in Charlotte</h2>
+        </div>
+        <div class="svc-split">
+          <div class="svc-prose">
+            <h3>Infill and Teardown Lots Inside the City</h3>
+            <p>A lot of Charlotte's new homes go up on in-town parcels in places like Cotswold, Sedgefield, Oakhurst, Plaza Midwood, and Madison Park. Some are vacant lots that grew up in volunteer trees over the decades. Others sit right beside a teardown, or the lot was split and the back half is still woods. These jobs come with fences on three sides, power and cable lines overhead, and a mature canopy shared with the neighbors. We plan every cut around those things before the machine is unloaded, so limbs come down where they should and nothing lands on a fence, a roof, or a parked car.</p>
+
+            <h3>Wooded Lots in Newer Subdivisions</h3>
+            <p>In growing parts of the city like Steele Creek, the Ballantyne area, and out toward University City, many buyers pick a lot because it backs up to woods. The developer often left those lots heavily treed, so the owner or builder has to open up just enough room for the house. The goal on these lots is usually the opposite of a blank slate: clear the front and the house site, then keep a deep stand of trees behind the house for shade and privacy.</p>
+
+            <h3>Clear the Building Envelope, Leave the Rest</h3>
+            <p>The building envelope is the area the house, driveway, and a working margin around them actually need. Clearing past it costs you money twice: once to remove trees you didn't have to lose, and again for landscaping to replace the shade and screening. We clear to the envelope on your plans, add the working room your builder needs for excavators and material drops, and stop there.</p>
+
+            <h3>Tight Access and Close Neighbors</h3>
+            <p>Many in-town lots have one way in: a narrow frontage between two houses or a single curb cut. We bring compact tracked equipment sized for the opening, lay down protection where we cross a sidewalk or a shared drive, and keep the street clean at the end of each day. We also give neighbors a heads-up when we're working near their side of the line.</p>
+
+            <h3>HOA Review and City Rules</h3>
+            <p>If your lot is in a neighborhood with an HOA, the architectural review committee may want to approve the clearing limits and the trees coming down before work starts. We'll mark everything on the ground so you can photograph it for the submittal. On the city side, Charlotte's tree ordinance applies mainly to commercial and new development, and any tree in the public right-of-way along the street belongs to the city. Most single lots fall under the one-acre threshold that triggers a state erosion and sedimentation control plan, but larger or steeper parcels may not. Confirm what applies to your lot with the city or county before we start.</p>
+
+            <h3>What We Hand Off, and to Whom</h3>
+            <p>We don't do grading. Our job ends with a cleared envelope that's ready for the builder or grading contractor to shape. Stumps inside the footprint can be ground or pulled as part of the scope, depending on what your builder wants under the foundation, and limbs and small material are mulched or hauled based on what the next crew needs.</p>
+          </div>
+          <div class="svc-split__media">
+            <figure class="svc-figure">
+              <img src="assets/images/before-land-clearing.jpg" alt="Wooded residential lot in Charlotte before clearing" loading="lazy">
+              <figcaption>Before: a wooded lot with no room for a house.</figcaption>
+            </figure>
+            <figure class="svc-figure">
+              <img src="assets/images/finished-site-prep.jpg" alt="Residential building envelope cleared with trees left at the edges" loading="lazy">
+              <figcaption>After: the envelope opened up, with trees kept around it.</figcaption>
+            </figure>
+            <div class="svc-callout">
+              <h3>Have a lot and a set of plans?</h3>
+              <p>Send us the address. We'll walk it with you, mark the envelope, and give you a firm written price.</p>
+              <a class="svc-btn svc-btn--gold" href="#estimate">Plan My Lot Clearing</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. OTHER SERVICES IN CHARLOTTE (Land group first, then Forestry, then Brush) -->
+    <div class="ds-label"><span>Other Services: group heads + chips (live / current / proposed)</span><code>.svc-group / .svc-chip</code></div>
+  <section class="svc-section svc-section--white" aria-labelledby="other-title">
+      <div class="svc-container">
+        <div class="svc-head">
+          <span class="svc-eyebrow">Everything We Do in Charlotte</span>
+          <h2 class="svc-h2" id="other-title">Other Services We Provide in Charlotte</h2>
+          <p>Residential lot clearing is one of the land clearing services we offer in Charlotte. Here's everything else we do, grouped by category.</p>
+        </div>
+
+        <div class="svc-group">
+          <a class="svc-group__head svc-group__head--land" href="#">
+            <span class="svc-group__tag">Parent Service</span>
+            <span class="svc-group__title">Land Clearing in Charlotte, NC</span>
+            <span class="svc-group__cta">View service &rarr;</span>
+          </a>
+          <div class="svc-chips">
+            <span class="svc-chip svc-chip--current" aria-current="page">Residential Lot Clearing</span>
+            <a class="svc-chip" href="#">Acreage Clearing</a>
+            <a class="svc-chip" href="#">Commercial Land Clearing</a>
+            <a class="svc-chip" href="#">Selective Clearing &amp; Tree Preservation</a>
+            <a class="svc-chip" href="#">Driveway &amp; Access Road Clearing</a>
+            <a class="svc-chip" href="#">Clearing for Pools, Barns &amp; Outbuildings</a>
+            <a class="svc-chip" href="#">Lakefront &amp; Shoreline Lot Clearing</a>
+            <a class="svc-chip" href="#">Stump Grinding &amp; Removal</a>
+          </div>
+        </div>
+
+        <div class="svc-group">
+          <a class="svc-group__head svc-group__head--forestry" href="#">
+            <span class="svc-group__tag">Core Service</span>
+            <span class="svc-group__title">Forestry Mulching in Charlotte, NC</span>
+            <span class="svc-group__cta">View service &rarr;</span>
+          </a>
+          <div class="svc-chips">
+            <a class="svc-chip" href="#">Underbrush Clearing</a>
+            <a class="svc-chip" href="#">Pasture &amp; Field Reclamation</a>
+            <a class="svc-chip" href="#">Trail Cutting</a>
+            <a class="svc-chip" href="#">Hunting Land &amp; Food Plot Clearing</a>
+            <a class="svc-chip" href="#">Right-of-Way &amp; Easement Clearing</a>
+            <a class="svc-chip" href="#">Survey Line Clearing</a>
+            <a class="svc-chip" href="#">Woodland Thinning</a>
+            <a class="svc-chip" href="#">Firebreak &amp; Fuel Reduction</a>
+          </div>
+        </div>
+
+        <div class="svc-group">
+          <a class="svc-group__head svc-group__head--brush" href="#">
+            <span class="svc-group__tag">Core Service</span>
+            <span class="svc-group__title">Brush Clearing in Charlotte, NC</span>
+            <span class="svc-group__cta">View service &rarr;</span>
+          </a>
+          <div class="svc-chips">
+            <div class="svc-chip svc-chip--proposed" data-href="#">Overgrown Lot Cleanup</div>
+            <div class="svc-chip svc-chip--proposed" data-href="#">Briar &amp; Thicket Clearing</div>
+            <div class="svc-chip svc-chip--proposed" data-href="#">Fence Line &amp; Property Line Clearing</div>
+            <div class="svc-chip svc-chip--proposed" data-href="#">Retention &amp; Detention Pond Clearing</div>
+            <div class="svc-chip svc-chip--proposed" data-href="#">Ditch &amp; Drainage Clearing</div>
+            <div class="svc-chip svc-chip--proposed" data-href="#">Storm Debris &amp; Downed Tree Cleanup</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. WHY CHOOSE US -->
+    <div class="ds-label"><span>Why Choose Us reasons</span><code>.svc-reasons</code></div>
+  <section class="svc-section svc-section--tint" aria-labelledby="why-title">
+      <div class="svc-container">
+        <div class="svc-head">
+          <span class="svc-eyebrow">Why Us</span>
+          <h2 class="svc-h2" id="why-title">Why Charlotte Homeowners and Builders Choose Us for Lot Clearing</h2>
+        </div>
+        <div class="svc-reasons">
+          <div class="svc-reason">
+            <span class="svc-reason__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 1v4M12 19v4M1 12h4M19 12h4"/></svg></span>
+            <h3>Cleared to the Plan</h3>
+            <p>We clear the footprint, the drive, and the working room on your plans. We don't clear the whole lot just because it's faster.</p>
+          </div>
+          <div class="svc-reason">
+            <span class="svc-reason__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 2v20M5 9l7-7 7 7"/></svg></span>
+            <h3>Your Best Trees Stay</h3>
+            <p>Keepers are flagged before we start and machines stay off their roots, so they're still healthy after the house is built.</p>
+          </div>
+          <div class="svc-reason">
+            <span class="svc-reason__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 17h18M5 17V9l7-5 7 5v8"/></svg></span>
+            <h3>Ready for the Next Crew</h3>
+            <p>The lot is handed off clean and to scope, so your builder or grading contractor starts on schedule.</p>
+          </div>
+          <div class="svc-reason">
+            <span class="svc-reason__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+            <h3>Neighbor-Friendly</h3>
+            <p>Compact equipment, a clean street, and a heads-up to the folks next door before we work near their line.</p>
+          </div>
+        </div>
+        <div class="svc-why-copy svc-prose">
+          <p>Clearing one residential lot is a small job with big consequences. A single misplaced cut can cost you a hundred-year oak or a neighbor's goodwill. We treat your lot like the start of your home, not just another clearing job, and leave it the way your builder hoped to find it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FAQs (FAQPage schema built from this list by site.js) -->
+    <div class="ds-label"><span>FAQ accordion (first item open)</span><code>.svc-faq__item</code></div>
+  <section class="svc-section svc-section--white" aria-labelledby="faq-title">
+      <div class="svc-container">
+        <div class="svc-head svc-head--center">
+          <span class="svc-eyebrow">Questions</span>
+          <h2 class="svc-h2" id="faq-title">Charlotte Residential Lot Clearing FAQs</h2>
+        </div>
+        <div class="svc-faq">
+          <details class="svc-faq__item" open>
+            <summary class="svc-faq__q">How much of my lot do I need to clear to build a house?</summary>
+            <div class="svc-faq__a"><p>Only the building envelope: the house footprint, the driveway, and enough working room around them for excavators, concrete trucks, and material deliveries. Your builder can tell you how much margin they want, and we'll clear to that line.</p></div>
+          </details>
+          <details class="svc-faq__item">
+            <summary class="svc-faq__q">Do you grade the lot too?</summary>
+            <div class="svc-faq__a"><p>No. We clear the lot and hand it off. Grading and final shaping are done by your builder or a grading contractor, and we'll leave the site ready for them.</p></div>
+          </details>
+          <details class="svc-faq__item">
+            <summary class="svc-faq__q">What happens to the stumps on my lot?</summary>
+            <div class="svc-faq__a"><p>Stumps under the house footprint and driveway are usually ground or pulled so they don't cause problems later. Stumps outside the envelope can often be cut low and left. We'll set this in your written scope based on what your builder wants.</p></div>
+          </details>
+          <details class="svc-faq__item">
+            <summary class="svc-faq__q">Can you clear a lot that's squeezed between two houses?</summary>
+            <div class="svc-faq__a"><p>Yes. Tight infill lots are common in Charlotte. We use compact tracked machines, protect any shared drive or sidewalk we cross, and plan every tree drop around fences, roofs, and lines.</p></div>
+          </details>
+          <details class="svc-faq__item">
+            <summary class="svc-faq__q">Do I need my HOA's approval before clearing?</summary>
+            <div class="svc-faq__a"><p>If your neighborhood has an HOA, very likely. Most want to see the clearing limits and which trees are coming down. We'll mark everything on site so you have a clear plan to submit.</p></div>
+          </details>
+          <details class="svc-faq__item">
+            <summary class="svc-faq__q">Does the city need to approve clearing my residential lot?</summary>
+            <div class="svc-faq__a"><p>Charlotte's tree ordinance applies mainly to commercial and new development, and trees in the public right-of-way belong to the city. Lots over an acre generally need an erosion control plan. Confirm the rules for your parcel with the city or county before work begins.</p></div>
+          </details>
+          <details class="svc-faq__item">
+            <summary class="svc-faq__q">How long does it take to clear a typical residential lot?</summary>
+            <div class="svc-faq__a"><p>Most single lots take one to three days on site, depending on tree size, density, and access. Scheduling usually takes a week or two from approval, and we'll work toward your builder's start date.</p></div>
+          </details>
+          <details class="svc-faq__item">
+            <summary class="svc-faq__q">I bought a lot next to a teardown. Can you clear both at once?</summary>
+            <div class="svc-faq__a"><p>Yes, as long as the demolition contractor has finished or we coordinate around their schedule. Clearing both parcels in one mobilization often saves time and keeps the neighbors from dealing with two separate disruptions.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <div class="ds-label"><span>Closing CTA band</span><code>.svc-cta</code></div>
+  <section class="svc-cta" aria-label="Get an estimate">
+      <div class="svc-container svc-cta__inner">
+        <div>
+          <h2>Ready to clear your Charlotte property?</h2>
+          <p>Free on-site walk-through and a firm written price.</p>
+        </div>
+        <div class="svc-cta__actions">
+          <a class="svc-btn svc-btn--gold" href="#estimate">Get My Free Estimate</a>
+          <a class="svc-btn svc-btn--ghost" href="tel:8285763931">Call (828) 576-3931</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="ds-label"><span>Footer</span><code>.site-footer</code></div>
+  <footer class="site-footer">
+    <div class="site-footer__container-inner">
+      <div class="site-footer__columns-grid--four-columns">
+        <div>
+          <h3 class="site-footer__brand-title--gold-bold"><img class="site-footer__brand-logo" src="assets/logo-on-navy.svg" alt="Land Clearing Charlotte" width="356" height="82"></h3>
+          <p class="site-footer__brand-text--light-muted">Land clearing, forestry mulching, and brush clearing across Charlotte and the surrounding North Carolina counties.</p>
+          <p class="site-footer__brand-text--light-muted"><strong>Address:</strong> 1930 Camden Rd Ste 238, Charlotte, NC 28203<br><strong>Phone:</strong> (828) 576-3931<br><strong>Hours:</strong> Mon - Sat: 7:00 AM - 6:30 PM</p>
+        </div>
+        <div>
+          <h4 class="site-footer__col-heading--white-uppercase">Core Services</h4>
+          <ul class="site-footer__links-list">
+            <li><a class="site-footer__link-item--gold-hover" href="#">Land Clearing in Charlotte</a></li>
+            <li><a class="site-footer__link-item--gold-hover" href="#">Forestry Mulching in Charlotte</a></li>
+            <li><a class="site-footer__link-item--gold-hover" href="#">Brush Clearing in Charlotte</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="site-footer__col-heading--white-uppercase">Service Areas</h4>
+          <ul class="site-footer__links-list">
+            <li><a class="site-footer__link-item--gold-hover" href="#">Huntersville, NC</a></li>
+            <li><a class="site-footer__link-item--gold-hover" href="#">Mint Hill, NC</a></li>
+            <li><span class="site-footer__link-item--muted">Waxhaw, NC</span></li>
+            <li><span class="site-footer__link-item--muted">Concord, NC</span></li>
+            <li><span class="site-footer__link-item--muted">Mooresville, NC</span></li>
+            <li><span class="site-footer__link-item--muted">Indian Trail, NC</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="site-footer__col-heading--white-uppercase">Resources &amp; Legal</h4>
+          <ul class="site-footer__links-list">
+            <li><a class="site-footer__link-item--gold-hover" href="#">Lot Clearing Tips</a></li>
+            <li><a class="site-footer__link-item--gold-hover" href="#">Privacy Policy</a></li>
+            <li><a class="site-footer__link-item--gold-hover" href="#">Cookies Policy</a></li>
+            <li><a class="site-footer__link-item--gold-hover" href="#">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom-row">
+        <span>&copy; 2026 Land Clearing Charlotte. All Rights Reserved. Fully Licensed &amp; Insured in NC.</span>
+        <span>We respect user privacy and do not sell data to third parties.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="ds-label"><span>Mobile sticky CTA (forced visible here; display:grid under 768px on the site)</span><code>.mobile-sticky-cta</code></div>
+  <aside class="mobile-sticky-cta" aria-label="Mobile Quick Action Bar">
+    <a href="tel:8285763931" class="mobile-sticky-cta__btn mobile-sticky-cta__btn--call"><span>Call Operator</span></a>
+    <a href="#estimate" class="mobile-sticky-cta__btn mobile-sticky-cta__btn--quote"><span>Free Estimate</span></a>
+  </aside>
+
+  
+</body>
+</html>

@@ -1,4 +1,4 @@
-# Charlotte Land Clearing — Website Architecture & Style Guide
+# Land Clearing Charlotte — Website Architecture & Style Guide
 
 This website was built using the **Modern Blue-Collar / Premium Trade** design system and the **Tree Node BEM naming architecture**.
 
@@ -61,7 +61,7 @@ In this system, classes mirror an abstract computer science tree node structure:
 
 All site pages, templates, scripts, and AI-generated content must use these standardized contact details:
 
-- **Business Name:** Charlotte Land Clearing
+- **Business Name:** Land Clearing Charlotte
 - **Primary Phone (Display):** `(828) 576-3931`
 - **Call Anchor (tel link):** `href="tel:8285763931"`
 - **Schema JSON-LD (`telephone`):** `"+1-828-576-3931"`
@@ -111,7 +111,7 @@ charlotte-land-clearing/
 To build any additional section (e.g. FAQ, Pricing, Equipment Specs) matching this exact style and Tree Node BEM structure, fill out the following template:
 
 ```markdown
-Build a new section for the Charlotte Land Clearing website using the exact design system and Tree Node BEM naming structure (Root Node = Purpose, Child Node = Location, Leaf Node = Styling).
+Build a new section for the Land Clearing Charlotte website using the exact design system and Tree Node BEM naming structure (Root Node = Purpose, Child Node = Location, Leaf Node = Styling).
 
 - **Section Purpose (Root Node):** [e.g., equipment-fleet / faq-accordion / pricing-estimator]
 - **Section Eyebrow:** [e.g., "HEAVY-DUTY MACHINERY"]

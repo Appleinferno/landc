@@ -1,4 +1,4 @@
-# Agent instructions: Charlotte Land Clearing
+# Agent instructions: Land Clearing Charlotte
 
 The live site is `charlotte-land-clearing/` (static HTML, deployed at https://landclearingcharlotte.com/).
 

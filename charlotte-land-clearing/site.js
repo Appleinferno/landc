@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CHARLOTTE LAND CLEARING — shared site script
+   LAND CLEARING CHARLOTTE — shared site script
    - Mobile drawer toggle
    - Estimate form handler (front-end only until a backend/CRM is connected)
    - FAQPage JSON-LD built from the visible FAQ list (keeps schema = on-page copy)

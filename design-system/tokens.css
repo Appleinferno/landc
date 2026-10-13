@@ -1,0 +1,190 @@
+/* ==========================================================================
+   LAND CLEARING CHARLOTTE: DESIGN TOKENS
+   Source of truth: charlotte-land-clearing/style.css + service-page.css
+   Layers: 1) primitives  2) semantic  3) component  4) legacy --clc-* aliases
+   Every value below is taken from the live site, except --ds-gold-ink
+   (a new, accessible gold for text on light backgrounds; see DESIGN.md).
+   ========================================================================== */
+
+:root {
+  /* ---------- 1. PRIMITIVES ---------- */
+  /* Navy */
+  --ds-navy-900: #121E33;
+  --ds-navy-800: #1B2B48;
+  --ds-navy-700: #24395E;
+  /* Gold */
+  --ds-gold-50:  #FFF8E1;
+  --ds-gold-400: #F2C84B;
+  --ds-gold-500: #E0B431;
+  --ds-gold-ink: #8A6A0A;            /* NEW: 5.06:1 on white */
+  /* Slate */
+  --ds-white:     #FFFFFF;
+  --ds-slate-25:  #F8F9FB;
+  --ds-slate-50:  #F8FAFC;
+  --ds-slate-100: #F1F4F9;
+  --ds-slate-110: #EDF1F7;
+  --ds-slate-150: #EDF2F7;
+  --ds-slate-200: #E2E8F0;
+  --ds-slate-250: #D8E0EC;
+  --ds-slate-275: #D3DDEB;
+  --ds-slate-300: #CBD5E1;
+  --ds-slate-350: #A3B3CC;
+  --ds-slate-400: #94A3B8;
+  --ds-slate-450: #718096;
+  --ds-slate-500: #64748B;
+  --ds-slate-600: #51607A;
+  --ds-slate-700: #475569;
+  /* Silo accents */
+  --ds-green-600:  #2F855A;
+  --ds-orange-600: #C05621;
+
+  /* Type */
+  --ds-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --ds-weight-semibold: 600;
+  --ds-weight-bold: 700;
+  --ds-weight-extrabold: 800;
+  --ds-weight-black: 900;
+
+  /* ---------- 2. SEMANTIC ---------- */
+  --ds-color-bg-page:        var(--ds-slate-25);
+  --ds-color-bg-surface:     var(--ds-white);
+  --ds-color-bg-subtle:      var(--ds-slate-100);
+  --ds-color-bg-inverse:     var(--ds-navy-900);
+  --ds-color-bg-inverse-alt: var(--ds-navy-800);
+  --ds-color-text-heading:   var(--ds-navy-800);
+  --ds-color-text-body:      var(--ds-slate-600);
+  --ds-color-text-muted:     var(--ds-slate-500);
+  --ds-color-text-on-dark:   var(--ds-slate-275);
+  --ds-color-text-on-dark-muted: var(--ds-slate-350);
+  --ds-color-text-on-accent: var(--ds-navy-800);
+  --ds-color-text-accent-on-light: var(--ds-gold-ink);
+  --ds-color-accent:         var(--ds-gold-400);
+  --ds-color-accent-hover:   var(--ds-gold-500);
+  --ds-color-border:         var(--ds-slate-200);
+  --ds-color-border-input:   var(--ds-slate-300);
+  --ds-color-silo-land:      var(--ds-gold-400);
+  --ds-color-silo-forestry:  var(--ds-green-600);
+  --ds-color-silo-brush:     var(--ds-orange-600);
+  --ds-color-state-current:  var(--ds-green-600);
+  --ds-color-focus:          var(--ds-gold-400);
+
+  /* Type scale */
+  --ds-text-hero:    clamp(2.2rem, 4.4vw, 3.5rem);
+  --ds-text-h2:      clamp(1.8rem, 3.2vw, 2.55rem);
+  --ds-text-h3:      1.32rem;
+  --ds-text-card:    1.12rem;
+  --ds-text-lead:    1.08rem;
+  --ds-text-prose:   1.04rem;
+  --ds-text-body:    1rem;
+  --ds-text-small:   0.92rem;
+  --ds-text-caption: 0.86rem;
+  --ds-text-label:   0.84rem;
+  --ds-text-eyebrow: 0.78rem;
+  --ds-text-micro:   0.7rem;
+  --ds-leading-tight: 1.08;
+  --ds-leading-heading: 1.15;
+  --ds-leading-body: 1.65;
+  --ds-leading-prose: 1.8;
+  --ds-tracking-hero: -0.02em;
+  --ds-tracking-eyebrow: 0.14em;
+  --ds-tracking-micro: 0.1em;
+
+  /* Spacing & layout */
+  --ds-container-max: 1440px;
+  --ds-container-pad: clamp(16px, 3.5vw, 48px);
+  --ds-section-pad: clamp(60px, 7vw, 100px);
+  --ds-space-1: 4px;
+  --ds-space-2: 8px;
+  --ds-space-3: 12px;
+  --ds-space-4: 16px;
+  --ds-space-5: 20px;
+  --ds-space-6: 24px;
+  --ds-space-8: 32px;
+  --ds-space-10: 40px;
+  --ds-space-12: 48px;
+
+  /* Radius */
+  --ds-radius-input: 10px;
+  --ds-radius-chip: 12px;
+  --ds-radius-tile: 14px;
+  --ds-radius-card: 16px;
+  --ds-radius-figure: 18px;
+  --ds-radius-form: 20px;
+  --ds-radius-pill: 50px;
+  --ds-radius-circle: 50%;
+
+  /* Accent borders */
+  --ds-accent-top-card: 5px solid var(--ds-gold-400);
+  --ds-accent-top-form: 6px solid var(--ds-gold-400);
+  --ds-accent-top-band: 4px solid var(--ds-gold-400);
+  --ds-accent-left: 6px solid var(--ds-gold-400);
+
+  /* Elevation */
+  --ds-shadow-trust: 0 8px 24px rgba(27, 43, 72, 0.05);
+  --ds-shadow-chip-hover: 0 8px 20px rgba(27, 43, 72, 0.10);
+  --ds-shadow-card: 0 14px 34px rgba(27, 43, 72, 0.10);
+  --ds-shadow-card-hover: 0 22px 46px rgba(27, 43, 72, 0.18);
+  --ds-shadow-button-hover: 0 10px 22px rgba(27, 43, 72, 0.18);
+  --ds-shadow-form: 0 30px 60px rgba(0, 0, 0, 0.35);
+  --ds-shadow-gold-glow: 0 10px 24px rgba(242, 200, 75, 0.35);
+  --ds-shadow-logo: 0 4px 10px rgba(242, 200, 75, 0.4);
+
+  /* Motion */
+  --ds-duration: 0.2s;
+  --ds-easing: ease;
+  --ds-lift-sm: -2px;   /* buttons, chips */
+  --ds-lift-md: -3px;   /* area cards */
+  --ds-lift-lg: -5px;   /* homepage cards */
+
+  /* Breakpoints (reference only; CSS vars can't be used in media queries) */
+  --ds-bp-xl: 1100px;
+  --ds-bp-lg: 960px;
+  --ds-bp-md: 768px;
+  --ds-bp-sm: 640px;
+  --ds-bp-xs: 480px;
+
+  /* ---------- 3. COMPONENT ---------- */
+  --ds-btn-pad: 15px 30px;
+  --ds-btn-radius: var(--ds-radius-pill);
+  --ds-btn-primary-bg: var(--ds-gold-400);
+  --ds-btn-primary-fg: var(--ds-navy-800);
+  --ds-btn-secondary-bg: var(--ds-navy-800);
+  --ds-btn-secondary-fg: var(--ds-white);
+  --ds-card-bg: var(--ds-white);
+  --ds-card-radius: var(--ds-radius-card);
+  --ds-card-shadow: var(--ds-shadow-card);
+  --ds-input-radius: var(--ds-radius-input);
+  --ds-input-border: var(--ds-slate-300);
+  --ds-logo-size: 42px;
+
+  /* ---------- 4. LEGACY ALIASES (exact names used by the live site) ---------- */
+  --clc-navy: var(--ds-navy-800);
+  --clc-gold: var(--ds-gold-400);
+  --clc-gold-dark: var(--ds-gold-500);
+  --clc-gold-50: var(--ds-gold-50);
+  --clc-gold-ink: var(--ds-gold-ink);
+  --clc-text: var(--ds-slate-600);
+  --clc-tint: var(--ds-slate-25);
+  --clc-white: var(--ds-white);
+  --clc-navy-dark: var(--ds-navy-900);
+  --clc-navy-light: var(--ds-navy-700);
+  --clc-border-subtle: var(--ds-slate-200);
+  --clc-border-input: var(--ds-slate-300);
+  --clc-text-on-dark: var(--ds-slate-275);
+  --clc-text-on-dark-muted: var(--ds-slate-350);
+  --clc-text-muted: var(--ds-slate-500);
+  --clc-slate-50: var(--ds-slate-50);
+  --clc-slate-100: var(--ds-slate-100);
+  --clc-slate-110: var(--ds-slate-110);
+  --clc-slate-150: var(--ds-slate-150);
+  --clc-slate-250: var(--ds-slate-250);
+  --clc-slate-400: var(--ds-slate-400);
+  --clc-slate-450: var(--ds-slate-450);
+  --clc-slate-700: var(--ds-slate-700);
+  --clc-green: var(--ds-green-600);
+  --clc-orange: var(--ds-orange-600);
+  --clc-font-family: var(--ds-font-sans);
+  --clc-shadow-card: var(--ds-shadow-card);
+  --clc-shadow-card-hover: var(--ds-shadow-card-hover);
+  --clc-shadow-button-hover: var(--ds-shadow-button-hover);
+}

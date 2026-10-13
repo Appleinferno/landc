@@ -1,4 +1,4 @@
-# Charlotte Land Clearing — Silo Structure
+# Land Clearing Charlotte — Silo Structure
 
 **Domain:** `landclearingcharlotte.com`
 **Site type:** Local SEO lead generation
@@ -47,7 +47,7 @@ The **homepage** links to **3 core service silos** (Land Clearing, Forestry Mulc
 | **Supporting** | Not location-based | `/lot-clearing-tips/`, `/privacy-policy/` | Homepage |
 
 > [!NOTE]
-> **Homepage vs. Land Clearing pillar:** the domain already contains "Charlotte land clearing," so the homepage acts as the **brand overview of all three services**. The deep content for "land clearing Charlotte NC" lives on `/land-clearing-charlotte-nc/`, and the homepage links to it prominently. This keeps the two pages from competing for the same keyword.
+> **Homepage vs. Land Clearing pillar:** the domain already contains "land clearing Charlotte," so the homepage acts as the **brand overview of all three services**. The deep content for "land clearing Charlotte NC" lives on `/land-clearing-charlotte-nc/`, and the homepage links to it prominently. This keeps the two pages from competing for the same keyword.
 
 ---
 
@@ -148,7 +148,7 @@ Same skeleton, different depth.
 
 | # | Section | Pillar (deeper) | Child (tighter, 100% unique copy) |
 |---|---|---|---|
-| 1 | **Title tag + meta** | `{Service} in {City}, {ST} \| Charlotte Land Clearing` | Same formula; the meta mentions a local landmark or drive time |
+| 1 | **Title tag + meta** | `{Service} in {City}, {ST} \| Land Clearing Charlotte` | Same formula; the meta mentions a local landmark or drive time |
 | 2 | **Hero (split)** | Left: H1 `{Service} in {City}, {ST}` + intro. Right: **estimate form above the fold** + call button | Same layout; intro written for the town |
 | 3 | **Trust bar** | Rating · reviews · owner on every job · insured | Local version: "Trusted across {City} · ~{X} min from {landmark}" |
 | 4 | **H2: What Our Process Is** | Intro + **4 numbered step cards** + supporting copy | Short process copy specific to the town |
@@ -198,7 +198,7 @@ flowchart LR
 
 | Search phrase | Owner |
 |---|---|
-| Brand / "Charlotte land clearing company" | Homepage |
+| Brand / "land clearing Charlotte company" | Homepage |
 | "land clearing Charlotte NC" | `/land-clearing-charlotte-nc/` |
 | "forestry mulching Charlotte NC" | `/forestry-mulching-charlotte-nc/` |
 | "brush clearing / brush removal Charlotte NC" | `/brush-clearing-charlotte-nc/` |

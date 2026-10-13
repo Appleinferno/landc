@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CHARLOTTE LAND CLEARING - DESIGN SYSTEM
+   LAND CLEARING CHARLOTTE - DESIGN SYSTEM
    Tree Node BEM Architecture:
    - Root Node (Block): Overall Purpose of the Element
    - Child Node (Element): Location of the Element
@@ -137,35 +137,10 @@ img {
   text-decoration: none;
 }
 
-.site-navigation__brand-logo-icon--gold-circle {
-  width: 42px;
-  height: 42px;
-  background: var(--clc-gold);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--clc-navy);
-  font-weight: 900;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 10px rgba(242, 200, 75, 0.4);
-}
-
-.site-navigation__brand-text--navy-bold {
-  color: var(--clc-navy);
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-}
-
-.site-navigation__brand-subtext--slate-small {
+.site-navigation__brand-logo {
   display: block;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--clc-text);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  height: 52px;
+  width: auto;
 }
 
 .site-navigation__menu-zone {
@@ -1313,6 +1288,12 @@ img {
   margin: 0 0 12px;
 }
 
+.site-footer__brand-logo {
+  display: block;
+  height: 60px;
+  width: auto;
+}
+
 .site-footer__brand-text--light-muted {
   font-size: 0.92rem;
   line-height: 1.65;
@@ -2394,16 +2375,8 @@ img {
     flex-direction: column;
     gap: 4px;
   }
-  .site-navigation__brand-text--navy-bold {
-    font-size: 1.1rem;
-  }
-  .site-navigation__brand-subtext--slate-small {
-    font-size: 0.65rem;
-  }
-  .site-navigation__brand-logo-icon--gold-circle {
-    width: 36px;
-    height: 36px;
-    font-size: 1.05rem;
+  .site-navigation__brand-logo {
+    height: 42px;
   }
 }
 

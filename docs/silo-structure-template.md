@@ -1,6 +1,6 @@
 # Silo Structure Template — Local SEO Lead Generation Site
 
-Use this template to plan the site structure for a **new local service business**. It follows the same model as the Charlotte Land Clearing silo structure (`charlotte-land-clearing-silo-structure.md`).
+Use this template to plan the site structure for a **new local service business**. It follows the same model as the Land Clearing Charlotte silo structure (`charlotte-land-clearing-silo-structure.md`).
 
 **How to use it:**
 1. Fill out **Part A (Intake)**. Every `{{PLACEHOLDER}}` needs an answer.

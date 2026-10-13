@@ -1,4 +1,4 @@
-# Prompt: Build the Forestry Mulching Silo (Core Service #2) — Charlotte Land Clearing
+# Prompt: Build the Forestry Mulching Silo (Core Service #2) — Land Clearing Charlotte
 
 Copy everything below the line into a new chat.
 

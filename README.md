@@ -1,6 +1,6 @@
-# Charlotte Land Clearing & Site Prep
+# Land Clearing Charlotte & Site Prep
 
-Lead-generation and silo-structured web platform for **Charlotte Land Clearing**, providing heavy-duty forestry mulching, acreage clearing, lot clearing, and commercial site prep across Charlotte, NC and surrounding areas.
+Lead-generation and silo-structured web platform for **Land Clearing Charlotte**, providing heavy-duty forestry mulching, acreage clearing, lot clearing, and commercial site prep across Charlotte, NC and surrounding areas.
 
 ---
 
