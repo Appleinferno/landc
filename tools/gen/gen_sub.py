@@ -1,7 +1,7 @@
 """Charlotte sub-service pillar renderer (9-section skeleton, as lot-clearing-charlotte-nc/)."""
 from lib import *
 
-ORDER = {"land": ["land", "forestry", "brush"], "forestry": ["forestry", "land", "brush"], "brush": ["brush", "land", "forestry"]}
+ORDER = ["land", "forestry", "brush"]
 
 def render_sub(p, silo_key, built):
     s = SILOS[silo_key]
@@ -36,13 +36,10 @@ def render_sub(p, silo_key, built):
               <figcaption>{cap}</figcaption>
             </figure>''' for img, alt, cap in p["figures"])
     co = p["callout"]
+    process_after = f'''\n        <div class="svc-after svc-prose">\n          <p>{p["process_after"]}</p>\n        </div>''' if p.get("process_after") else ""
+    areas_after = f'''\n        <div class="svc-after svc-prose">\n          <p>{p["areas_after"]}</p>\n        </div>''' if p.get("areas_after") else ""
 
-    groups = []
-    for key in ORDER[silo_key]:
-        chips = "\n".join(chip(f"{sl}-charlotte-nc", lbl, current=(key == silo_key and sl == p["slug"]), built=built)
-                          for sl, lbl in SUBS[key])
-        groups.append(group(key, "Parent Service" if key == silo_key else "Core Service", chips))
-    groups = "\n\n".join(groups)
+    groups = other_services_groups(slug, city="Charlotte", city_slug="charlotte-nc", built=built)
 
     html = head(title, p["meta"], url, p["hero_img"], ld) + header_for(silo_key) + f'''  <main>
     <!-- 2. HERO -->
@@ -79,7 +76,7 @@ def render_sub(p, silo_key, built):
         </div>
         <ol class="svc-steps svc-steps--compact">
 {steps_html(p["steps"])}
-        </ol>
+        </ol>{process_after}
       </div>
     </section>
 
@@ -98,7 +95,7 @@ def render_sub(p, silo_key, built):
             <span class="svc-area-card__meta">All of Charlotte &amp; Mecklenburg County</span>
           </a>
 {towns}
-        </div>
+        </div>{areas_after}
       </div>
     </section>
 
@@ -125,7 +122,7 @@ def render_sub(p, silo_key, built):
       </div>
     </section>
 
-    <!-- 7. OTHER SERVICES IN CHARLOTTE (parent silo first, then the other two) -->
+    <!-- 7. OTHER SERVICES IN CHARLOTTE (fixed order: Land, Forestry, Brush) -->
     <section class="svc-section svc-section--white" aria-labelledby="other-title">
       <div class="svc-container">
         <div class="svc-head">

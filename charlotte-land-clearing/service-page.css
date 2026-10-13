@@ -395,7 +395,6 @@ a.svc-group__head:hover { transform: translateY(-2px); box-shadow: var(--clc-sha
 .svc-group__head--land { border-left-color: var(--clc-gold); }
 .svc-group__head--forestry { border-left-color: #2F855A; }
 .svc-group__head--brush { border-left-color: #C05621; }
-.svc-group__head--current { background: var(--clc-tint); }
 .svc-group__head--proposed { border-style: dashed; border-left-style: solid; }
 .svc-group__head--proposed .svc-group__title { color: #475569; }
 
@@ -423,8 +422,6 @@ a.svc-group__head:hover { transform: translateY(-2px); box-shadow: var(--clc-sha
 a.svc-chip::after { content: "\2192"; color: var(--clc-gold-dark); font-weight: 900; }
 a.svc-chip:hover { transform: translateY(-2px); border-color: var(--clc-gold); box-shadow: 0 8px 20px rgba(27, 43, 72, .1); }
 .svc-chip--proposed { background: transparent; border-style: dashed; color: #64748B; font-weight: 600; }
-.svc-chip--current { background: var(--clc-tint); border-color: #2F855A; }
-.svc-chip--current::after { content: "You're here"; font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #2F855A; }
 
 /* ==========================================================================
    8. WHY CHOOSE US

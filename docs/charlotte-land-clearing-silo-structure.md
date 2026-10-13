@@ -115,12 +115,12 @@ Status key: ✅ built (Charlotte page live) · 🟡 confirmed, not built yet · 
 
 | Sub-service | Slug | Status |
 |---|---|---|
-| Overgrown Lot Cleanup | `overgrown-lot-cleanup` | 🟡 |
-| Briar & Thicket Clearing | `briar-clearing` | 🟡 |
-| Fence Line & Property Line Clearing | `fence-line-clearing` | 🟡 |
-| Retention & Detention Pond Clearing | `retention-pond-clearing` | 🟡 |
-| Ditch & Drainage Clearing | `ditch-clearing` | 🟡 |
-| Storm Debris & Downed Tree Cleanup | `storm-debris-cleanup` | 🟡 |
+| Overgrown Lot Cleanup | `overgrown-lot-cleanup` | ✅ |
+| Briar & Thicket Clearing | `briar-clearing` | ✅ |
+| Fence Line & Property Line Clearing | `fence-line-clearing` | ✅ |
+| Retention & Detention Pond Clearing | `retention-pond-clearing` | ✅ |
+| Ditch & Drainage Clearing | `ditch-clearing` | ✅ |
+| Storm Debris & Downed Tree Cleanup | `storm-debris-cleanup` | ✅ |
 | Invasive Species Removal | — | ❌ Not offered |
 | Kudzu & Vine Removal | — | ❌ Not offered |
 
@@ -158,7 +158,7 @@ Same skeleton, different depth.
 | 4 | **H2: What Our Process Is** | Intro + **4 numbered step cards** + supporting copy | Short process copy specific to the town |
 | 5 | **H2: Where We Serve** | A card for **every child page**, with no limit | **First card = its pillar**, then sibling cities, no limit |
 | 6 | Continuing copy | Depth on terrain, permits, equipment | Local terrain, soils, neighborhoods |
-| 7 | **H2: Other Services We Provide in {City}** | Every silo, city-matched; the core page leads each group, sub-services follow | Same, city-matched to the town |
+| 7 | **H2: Other Services We Provide in {City}** | Fixed order (Land Clearing &rarr; Forestry Mulching &rarr; Brush Clearing), city-matched; each group has its "Core Service" header card + sub-service chips, with the current page omitted (pillar drops its own header card and keeps its sub-service chips) | Same fixed order, city-matched to the town, omitting the current page |
 | 8 | **H2: Why Choose Us** | Full trust story | Town-specific angle |
 | 9 | **H2: {City} {Service} FAQs** | 8–12 Q&As written out in full, unique per city | 8–12 Q&As unique to the town |
 
@@ -171,18 +171,18 @@ Same skeleton, different depth.
 
 1. **No internal links inside body copy.** All internal links live in cards and link sections (nav, hero CTA, Where We Serve, Other Services, footer).
 2. **On every child page, the first in-content link is its pillar** (the first card in Where We Serve).
-3. **Other Services is always city-matched.** A Huntersville page links only to Huntersville service pages, and the core service page leads each group.
+3. **Other Services is always city-matched in a fixed order (Land Clearing &rarr; Forestry Mulching &rarr; Brush Clearing).** Each group starts with its "Core Service" header card (`{silo}-{city}-nc`) followed by all of that silo's sub-service chips (`{sub}-{city}-nc`). The current page is simply omitted (a pillar or core child omits its own header card while keeping its sub-service chips; a sub-service page omits its own chip). There are no self-links and no "You're here" indicators.
 4. **Where We Serve has no limit.** Every city in the service area gets a card.
 5. **Proposed pages** (not yet built) show as unlinked cards, never as broken links. When the page goes live, the card becomes a link.
 
 ### Link map by page type
 
-| Page | Links up (first) | Where We Serve (sideways or down) | Other Services in {City} |
+| Page | Links up (first) | Where We Serve (sideways or down) | Other Services in {City} (Land &rarr; Forestry &rarr; Brush) |
 |---|---|---|---|
-| Core pillar `/land-clearing-charlotte-nc/` | Homepage (nav/breadcrumb) | All `/land-clearing-{small-city}/` children | Own silo's sub-services + other 2 silos, all Charlotte |
-| Core child `/land-clearing-huntersville-nc/` | `/land-clearing-charlotte-nc/` | Other `/land-clearing-{small-city}/` siblings | All 3 silos, Huntersville versions |
-| Sub-service pillar `/lot-clearing-charlotte-nc/` | `/land-clearing-charlotte-nc/` | All `/lot-clearing-{small-city}/` children | All 3 silos, Charlotte versions |
-| Sub-service child `/lot-clearing-huntersville-nc/` | `/lot-clearing-charlotte-nc/` | Other `/lot-clearing-{small-city}/` siblings | All 3 silos, Huntersville versions |
+| Core pillar `/land-clearing-charlotte-nc/` | Homepage (nav/breadcrumb) | All `/land-clearing-{small-city}/` children | Charlotte groups; omits own header card (keeps own 8 sub-service chips as links down) + full Forestry &amp; Brush groups |
+| Core child `/land-clearing-huntersville-nc/` | `/land-clearing-charlotte-nc/` | Other `/land-clearing-{small-city}/` siblings | Huntersville groups; omits own header card (keeps Huntersville Land sub-service chips) + full Forestry &amp; Brush groups |
+| Sub-service pillar `/lot-clearing-charlotte-nc/` | `/land-clearing-charlotte-nc/` | All `/lot-clearing-{small-city}/` children | Charlotte groups; all 3 header cards + sub-service chips, omitting `/lot-clearing-charlotte-nc/` chip |
+| Sub-service child `/lot-clearing-huntersville-nc/` | `/lot-clearing-charlotte-nc/` | Other `/lot-clearing-{small-city}/` siblings | Huntersville groups; all 3 header cards + sub-service chips, omitting `/lot-clearing-huntersville-nc/` chip |
 
 ```mermaid
 flowchart LR
@@ -225,7 +225,7 @@ Sub-services: Land Clearing 8 + Forestry Mulching 8 + Brush Clearing 6 = **22** 
 | Sub-services (22) | 22 | 132 | **154** |
 | **All service pages** | **25** | **150** | **175** |
 
-**Live as of October 13, 2026:** 3 core pillars, 2 core children (Land Clearing: Huntersville, Mint Hill), 16 Charlotte sub-service pillars (Land 8, Forestry 8). Brush sub-service pillars (6) and the other 16 core children are next.
+**Live as of October 13, 2026:** 3 core pillars, 2 core children (Land Clearing: Huntersville, Mint Hill), 22 Charlotte sub-service pillars (Land 8, Forestry 8, Brush 6). The other 16 core children are next.
 
 ## 11. Build phases
 

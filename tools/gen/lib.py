@@ -1,4 +1,4 @@
-﻿"""Shared building blocks for Land Clearing Charlotte page generation.
+"""Shared building blocks for Land Clearing Charlotte page generation.
 Header, closing CTA band, footer and sticky CTA are copied verbatim from land-clearing-charlotte-nc/index.html."""
 import os, re, json
 
@@ -229,35 +229,51 @@ def steps_html(steps):
             <p class="svc-step__text">{x}</p>
           </li>''' for n, (t, x) in enumerate(steps, 1))
 
-def chip(href_slug, label, current=False, built=None):
+SILO_ORDER = ["land", "forestry", "brush"]
+
+def chip(href_slug, label, built=None):
     href = f"../{href_slug}/"
-    if current:
-        return f'            <span class="svc-chip svc-chip--current" aria-current="page">{label}</span>'
     if (built is not None and href_slug in built) or exists(href_slug):
         return f'            <a class="svc-chip" href="{href}">{label}</a>'
     return f'            <div class="svc-chip svc-chip--proposed" data-href="{href}">{label}</div>'
 
-def group(silo_key, tag, chips_html, city="Charlotte", city_slug="charlotte-nc", head_live=True):
+def group(silo_key, chips_html, city="Charlotte", city_slug="charlotte-nc", head_live=True, omit_head=False):
     s = SILOS[silo_key]
     core_slug = f'{s["pillar"].rsplit("-charlotte-nc", 1)[0]}-{city_slug}'
     title = f'{s["name"]} in {city}, NC'
-    if head_live:
+    if omit_head:
+        head = ""
+    elif head_live:
         head = f'''          <a class="svc-group__head svc-group__head--{s["head"]}" href="../{core_slug}/">
-            <span class="svc-group__tag">{tag}</span>
+            <span class="svc-group__tag">Core Service</span>
             <span class="svc-group__title">{title}</span>
             <span class="svc-group__cta">View service &rarr;</span>
-          </a>'''
+          </a>\n'''
     else:
         head = f'''          <div class="svc-group__head svc-group__head--{s["head"]} svc-group__head--proposed" data-href="../{core_slug}/">
-            <span class="svc-group__tag">{tag}</span>
+            <span class="svc-group__tag">Core Service</span>
             <span class="svc-group__title">{title}</span>
-          </div>'''
+          </div>\n'''
     return f'''        <div class="svc-group">
-{head}
-          <div class="svc-chips">
+{head}          <div class="svc-chips">
 {chips_html}
           </div>
         </div>'''
+
+def other_services_groups(current_slug, city="Charlotte", city_slug="charlotte-nc", built=None):
+    groups = []
+    for key in SILO_ORDER:
+        s = SILOS[key]
+        core_slug = f'{s["pillar"].rsplit("-charlotte-nc", 1)[0]}-{city_slug}'
+        omit_head = (core_slug == current_slug)
+        head_live = (built is not None and core_slug in built) or exists(core_slug)
+        chips = "\n".join(
+            chip(f"{sl}-{city_slug}", lbl, built=built)
+            for sl, lbl in SUBS[key]
+            if f"{sl}-{city_slug}" != current_slug
+        )
+        groups.append(group(key, chips, city=city, city_slug=city_slug, head_live=head_live, omit_head=omit_head))
+    return "\n\n".join(groups)
 
 def faq_html(faqs):
     return "\n".join(f'''          <details class="svc-faq__item">
