@@ -78,25 +78,26 @@ flowchart TD
 
 ## 5. Service inventory
 
-Status key: ✅ confirmed · ⚠️ confirm before building
+Confirmed by the owner, October 2026.
+Status key: ✅ built (Charlotte page live) · 🟡 confirmed, not built yet · ❌ not offered (no pages, no chips, never claimed)
 
 ### Silo 1 — Land Clearing
-**Pillar:** `/land-clearing-charlotte-nc/` · **Buyer:** wants to build on or use the land
+**Pillar:** `/land-clearing-charlotte-nc/` ✅ · **Buyer:** wants to build on or use the land
 
 | Sub-service | Slug | Status |
 |---|---|---|
 | Residential Lot Clearing | `lot-clearing` | ✅ |
 | Acreage Clearing | `acreage-clearing` | ✅ |
 | Commercial Land Clearing | `commercial-land-clearing` | ✅ |
-| House Pad & Building Site Prep | `house-pad-site-prep` | ⚠️ grading? |
 | Selective Clearing & Tree Preservation | `selective-clearing` | ✅ |
 | Driveway & Access Road Clearing | `driveway-clearing` | ✅ |
 | Clearing for Pools, Barns & Outbuildings | `outbuilding-site-clearing` | ✅ |
-| Lakefront & Shoreline Lot Clearing | `lakefront-lot-clearing` | ⚠️ lake work? |
-| Stump Grinding & Removal | `stump-grinding` | ⚠️ |
+| Lakefront & Shoreline Lot Clearing | `lakefront-lot-clearing` | ✅ |
+| Stump Grinding & Removal (full stump removal offered) | `stump-grinding` | ✅ |
+| House Pad & Building Site Prep / grading | — | ❌ Not offered. Saying "we don't grade, we hand off to your grading contractor" is fine. |
 
 ### Silo 2 — Forestry Mulching
-**Pillar:** `/forestry-mulching-charlotte-nc/` · **Buyer:** wants land cleaned up and usable without burning, hauling, or soil damage
+**Pillar:** `/forestry-mulching-charlotte-nc/` ✅ · **Buyer:** wants land cleaned up and usable without burning, hauling, or soil damage
 
 | Sub-service | Slug | Status |
 |---|---|---|
@@ -104,24 +105,27 @@ Status key: ✅ confirmed · ⚠️ confirm before building
 | Pasture & Field Reclamation | `pasture-clearing` | ✅ |
 | Trail Cutting | `trail-cutting` | ✅ |
 | Hunting Land & Food Plot Clearing | `food-plot-clearing` | ✅ |
-| Right-of-Way & Easement Clearing | `right-of-way-clearing` | ✅ |
+| Right-of-Way & Easement Clearing | `right-of-way-clearing` | ✅ (private easements/access roads direct; utility, sewer, water, pipeline corridors only as a subcontractor to the contractor) |
 | Survey Line Clearing | `survey-line-clearing` | ✅ |
 | Woodland Thinning | `woodland-thinning` | ✅ |
 | Firebreak & Fuel Reduction | `firebreak-clearing` | ✅ |
 
 ### Silo 3 — Brush Clearing
-**Pillar:** `/brush-clearing-charlotte-nc/` · **Buyer:** wants overgrowth gone from a lot, edge, or problem area
+**Pillar:** `/brush-clearing-charlotte-nc/` ✅ · **Buyer:** wants overgrowth gone from a lot, edge, or problem area
 
 | Sub-service | Slug | Status |
 |---|---|---|
-| Overgrown Lot Cleanup | `overgrown-lot-cleanup` | ✅ |
-| Invasive Species Removal | `invasive-species-removal` | ⚠️ herbicide? |
-| Kudzu & Vine Removal | `kudzu-removal` | ⚠️ herbicide? |
-| Briar & Thicket Clearing | `briar-clearing` | ✅ |
-| Fence Line & Property Line Clearing | `fence-line-clearing` | ✅ |
-| Retention & Detention Pond Clearing | `retention-pond-clearing` | ✅ |
-| Ditch & Drainage Clearing | `ditch-clearing` | ✅ |
-| Storm Debris & Downed Tree Cleanup | `storm-debris-cleanup` | ⚠️ |
+| Overgrown Lot Cleanup | `overgrown-lot-cleanup` | 🟡 |
+| Briar & Thicket Clearing | `briar-clearing` | 🟡 |
+| Fence Line & Property Line Clearing | `fence-line-clearing` | 🟡 |
+| Retention & Detention Pond Clearing | `retention-pond-clearing` | 🟡 |
+| Ditch & Drainage Clearing | `ditch-clearing` | 🟡 |
+| Storm Debris & Downed Tree Cleanup | `storm-debris-cleanup` | 🟡 |
+| Invasive Species Removal | — | ❌ Not offered |
+| Kudzu & Vine Removal | — | ❌ Not offered |
+
+> [!IMPORTANT]
+> **Never offered, never claimed anywhere:** house pads or grading, invasive species removal, kudzu or vine removal, and herbicide or chemical treatment of any kind.
 
 ---
 
@@ -204,7 +208,7 @@ flowchart LR
 | "brush clearing / brush removal Charlotte NC" | `/brush-clearing-charlotte-nc/` |
 | "lot clearing Charlotte" | `/lot-clearing-charlotte-nc/` |
 | "underbrush clearing" | Underbrush (Forestry silo), not Brush Clearing |
-| "invasive removal" vs. "kudzu removal" | Shrubs and trees vs. vines; separate pages |
+| "briar clearing" vs. "underbrush clearing" | Briar & Thicket (Brush silo: open ground, edges) vs. Underbrush (Forestry silo: beneath a tree canopy) |
 | "{service} {small city}" | The matching child page |
 
 If two pages would answer the same question for the same person, merge them.
@@ -213,11 +217,15 @@ If two pages would answer the same question for the same person, merge them.
 
 ## 10. Page count
 
+Sub-services: Land Clearing 8 + Forestry Mulching 8 + Brush Clearing 6 = **22** (❌ not-offered services excluded).
+
 | | Charlotte (main) | × 6 Wave 1 cities | Total |
 |---|---|---|---|
 | Core services (3) | 3 | 18 | **21** |
-| Sub-services (25) | 25 | 150 | **175** |
-| **All service pages** | **28** | **168** | **196** |
+| Sub-services (22) | 22 | 132 | **154** |
+| **All service pages** | **25** | **150** | **175** |
+
+**Live as of October 13, 2026:** 3 core pillars, 2 core children (Land Clearing: Huntersville, Mint Hill), 16 Charlotte sub-service pillars (Land 8, Forestry 8). Brush sub-service pillars (6) and the other 16 core children are next.
 
 ## 11. Build phases
 
@@ -225,7 +233,7 @@ If two pages would answer the same question for the same person, merge them.
 |---|---|---|
 | **1** | 3 core pillars + homepage nav and card updates | 3 |
 | **2** | 3 core services × 6 Wave 1 cities | 18 |
-| **3** | Charlotte sub-service pillars (✅ items first: Lot Clearing, Acreage, Underbrush, Right-of-Way, Overgrown Lot Cleanup, Commercial) | ~25 |
+| **3** | Charlotte sub-service pillars | 22 |
 | **4** | Sub-service children, only where there's demand or local proof | Ongoing |
 | **5** | Wave 2 cities | Ongoing |
 

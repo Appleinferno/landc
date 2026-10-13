@@ -1,7 +1,7 @@
 /* ==========================================================================
    LAND CLEARING CHARLOTTE — shared site script
    - Mobile drawer toggle
-   - Estimate form handler (front-end only until a backend/CRM is connected)
+   - Estimate form handler (POSTs to FORM_ENDPOINT; email fallback until it's set; honeypot; success/error states)
    - FAQPage JSON-LD built from the visible FAQ list (keeps schema = on-page copy)
    ========================================================================== */
 (function () {
@@ -31,12 +31,73 @@
   }
 
   // ---- Estimate forms ----
-  // TODO: replace with a real endpoint (email service / CRM webhook) before launch.
+  // FORM_ENDPOINT: paste the backend URL here (Web3Forms, Formspree, CRM webhook, ...).
+  //   e.g. 'https://formspree.io/f/XXXXXXX' or 'https://api.web3forms.com/submit'
+  //   (Web3Forms also needs FORM_EXTRA = { access_key: '...' }).
+  // While empty, submissions open a prefilled email to FORM_EMAIL instead.
+  var FORM_ENDPOINT = '';
+  var FORM_EXTRA = {};
+  var FORM_EMAIL = 'patrick@landclearingcharlotte.com';
+  var HONEYPOT = 'company_website';
+
+  function formToObject(form) {
+    var data = {};
+    new FormData(form).forEach(function (v, k) { if (k !== HONEYPOT) data[k] = v; });
+    var sel = form.querySelector('select[name="service"], select[name="service-type"]');
+    data.page = document.title;
+    data.page_url = location.href.split('#')[0];
+    if (sel) data.subject = 'Estimate request: ' + sel.options[sel.selectedIndex].text;
+    Object.keys(FORM_EXTRA).forEach(function (k) { data[k] = FORM_EXTRA[k]; });
+    return data;
+  }
+
   document.querySelectorAll('form[data-estimate-form]').forEach(function (form) {
+    var card = form.closest('.svc-form-card') || form.parentElement;
+    var errorBox = card.querySelector('.svc-form__error');
+    var success = card.querySelector('.svc-form__success');
+    var btn = form.querySelector('button[type="submit"]');
+
+    function showSuccess(title, text) {
+      if (success && title) success.querySelector('h3').textContent = title;
+      if (success && text) success.querySelector('p').textContent = text;
+      card.classList.add('is-sent');
+      if (success) { success.setAttribute('tabindex', '-1'); success.focus(); }
+    }
+    function showError() {
+      if (errorBox) errorBox.hidden = false;
+    }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var card = form.closest('.svc-form-card');
-      if (card) card.classList.add('is-sent');
+      if (errorBox) errorBox.hidden = true;
+      var hp = form.querySelector('[name="' + HONEYPOT + '"]');
+      if (hp && hp.value) { showSuccess(); return; } // bot: pretend success, send nothing
+
+      var data = formToObject(form);
+
+      if (!FORM_ENDPOINT) {
+        var body = Object.keys(data).filter(function (k) { return k !== 'subject'; })
+          .map(function (k) { return k + ': ' + data[k]; }).join('\n');
+        window.location.href = 'mailto:' + FORM_EMAIL +
+          '?subject=' + encodeURIComponent(data.subject || 'Estimate request') +
+          '&body=' + encodeURIComponent(body);
+        showSuccess('Almost done.', 'Your email app should have opened with your details filled in. Press send and we\'ll call within one business day, or call (828) 576-3931 now.');
+        return;
+      }
+
+      if (btn) { btn.disabled = true; btn.setAttribute('aria-busy', 'true'); }
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        showSuccess();
+      }).catch(function () {
+        showError();
+      }).then(function () {
+        if (btn) { btn.disabled = false; btn.removeAttribute('aria-busy'); }
+      });
     });
   });
 

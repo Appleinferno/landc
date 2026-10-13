@@ -68,6 +68,10 @@ All site pages, templates, scripts, and AI-generated content must use these stan
 - **Meta Description Format:** `Free estimates: (828) 576-3931.`
 - **Operating Hours:** Mon - Sat: 7:00 AM - 6:30 PM
 - **Primary Service Counties:** Charlotte, Mecklenburg, Union, Cabarrus & Gaston Counties, NC
+- **Lead email:** `patrick@landclearingcharlotte.com`
+
+### Estimate forms
+Every `form[data-estimate-form]` is handled by `site.js`. Set `FORM_ENDPOINT` (and `FORM_EXTRA` for keys such as a Web3Forms `access_key`) at the top of the forms block. While `FORM_ENDPOINT` is empty, a submit opens a prefilled email to the lead address. Each form has a `company_website` honeypot, a `.svc-form__success` state and a `.svc-form__error` state.
 
 ---
 
@@ -75,13 +79,14 @@ All site pages, templates, scripts, and AI-generated content must use these stan
 
 ```
 charlotte-land-clearing/
-├── images/
-│   ├── after-land-clearing.png
-│   ├── before-land-clearing.png
-│   ├── finished-site-prep.png
-│   ├── forestry-mulcher-active.png
-│   ├── full-lot-clearing.png
-│   └── work-in-progress.png
+├── images/                    # 1600px .jpg (q80) + .webp, served via <picture>. Originals live in /source-images/ (not deployed)
+│   ├── after-land-clearing.jpg / .webp
+│   ├── before-land-clearing.jpg / .webp
+│   ├── finished-site-prep.jpg / .webp
+│   ├── forestry-mulcher-active.jpg / .webp
+│   ├── full-lot-clearing.jpg / .webp
+│   ├── work-in-progress.jpg / .webp
+│   └── logo/
 ├── lot-clearing-tips/
 │   └── index.html             # Resources & Blog Category page (/lot-clearing-tips/)
 ├── privacy-policy/

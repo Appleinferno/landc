@@ -2413,3 +2413,75 @@ img {
   padding: 6px 12px;
   font-size: 0.8rem;
 }
+
+/* <picture> wrappers (webp + jpg fallback) are layout-neutral: the <img> keeps its existing rules */
+picture {
+  display: contents;
+}
+
+/* Estimate form states (shared by homepage + service pages) */
+.svc-form__hp {
+  position: absolute !important;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.svc-form__success {
+  display: none;
+  text-align: center;
+  padding: 30px 6px;
+}
+.svc-form__success h3 {
+  color: var(--clc-navy);
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+}
+.is-sent > form {
+  display: none;
+}
+.is-sent > .svc-form__success {
+  display: block;
+}
+.svc-form__error {
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #FDF2F2;
+  border: 1px solid #F3C4C4;
+  color: #8B1E1E;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.svc-form__error[hidden] {
+  display: none;
+}
+.svc-form__error p {
+  margin: 0;
+}
+.svc-form__error a {
+  color: inherit;
+  font-weight: 700;
+}
+form[data-estimate-form] button[aria-busy="true"] {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+/* Topbar: phone number never splits */
+.site-topbar__right-contact > * {
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .site-topbar {
+    font-size: 0.82rem;
+  }
+  .site-topbar__left-info,
+  .site-topbar__right-contact > :nth-child(n+3) {
+    display: none;
+  }
+  .site-topbar__right-contact {
+    gap: 8px;
+    justify-content: center;
+  }
+}
