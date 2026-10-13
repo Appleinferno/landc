@@ -71,7 +71,7 @@ All site pages, templates, scripts, and AI-generated content must use these stan
 - **Lead email:** `patrick@landclearingcharlotte.com`
 
 ### Estimate forms
-Every `form[data-estimate-form]` is handled by `site.js`. Set `FORM_ENDPOINT` (and `FORM_EXTRA` for keys such as a Web3Forms `access_key`) at the top of the forms block. While `FORM_ENDPOINT` is empty, a submit opens a prefilled email to the lead address. Each form has a `company_website` honeypot, a `.svc-form__success` state and a `.svc-form__error` state.
+Backend: **Formcarry**, endpoint `https://formcarry.com/s/za8glfgKic_`. Every `form[data-estimate-form]` has `action="<endpoint>" method="POST"` (works without JS) and is submitted by `site.js` via `fetch` as JSON (`FORM_ENDPOINT` at the top of the forms block). Each form has a `_gotcha` honeypot (Formcarry's spam field), a `.svc-form__success` state and a `.svc-form__error` state (phone + email fallback). If `FORM_ENDPOINT` is emptied, a submit opens a prefilled email to the lead address instead.
 
 ---
 

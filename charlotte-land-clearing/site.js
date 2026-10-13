@@ -31,14 +31,15 @@
   }
 
   // ---- Estimate forms ----
-  // FORM_ENDPOINT: paste the backend URL here (Web3Forms, Formspree, CRM webhook, ...).
-  //   e.g. 'https://formspree.io/f/XXXXXXX' or 'https://api.web3forms.com/submit'
-  //   (Web3Forms also needs FORM_EXTRA = { access_key: '...' }).
-  // While empty, submissions open a prefilled email to FORM_EMAIL instead.
-  var FORM_ENDPOINT = '';
+  // Backend: Formcarry (https://formcarry.com). Submissions are POSTed as JSON with
+  // Accept: application/json; Formcarry replies { code: 200, status: "success" }.
+  // Each <form> also has action="<endpoint>" method="POST" so it still works without JS.
+  // `_gotcha` is Formcarry's honeypot field name (filtered server-side too).
+  // If FORM_ENDPOINT is ever emptied, submissions fall back to a prefilled email to FORM_EMAIL.
+  var FORM_ENDPOINT = 'https://formcarry.com/s/za8glfgKic_';
   var FORM_EXTRA = {};
   var FORM_EMAIL = 'patrick@landclearingcharlotte.com';
-  var HONEYPOT = 'company_website';
+  var HONEYPOT = '_gotcha';
 
   function formToObject(form) {
     var data = {};
@@ -92,6 +93,9 @@
         body: JSON.stringify(data)
       }).then(function (res) {
         if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json().catch(function () { return {}; });
+      }).then(function (json) {
+        if (json && json.status && json.status !== 'success') throw new Error(json.message || 'Rejected');
         showSuccess();
       }).catch(function () {
         showError();
