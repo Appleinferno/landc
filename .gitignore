@@ -52,3 +52,7 @@ build/
 *.tmp
 *.bak
 *~
+
+# Local QA screenshots
+screenshots/
+tools/gen/__pycache__/
