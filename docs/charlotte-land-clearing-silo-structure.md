@@ -225,7 +225,7 @@ Sub-services: Land Clearing 8 + Forestry Mulching 8 + Brush Clearing 6 = **22** 
 | Sub-services (22) | 22 | 132 | **154** |
 | **All service pages** | **25** | **150** | **175** |
 
-**Live as of October 13, 2026:** 3 core pillars, 2 core children (Land Clearing: Huntersville, Mint Hill), 22 Charlotte sub-service pillars (Land 8, Forestry 8, Brush 6). The other 16 core children are next.
+**Live as of October 13, 2026:** 3 core pillars, 18 core children (Land Clearing, Forestry Mulching & Brush Clearing across all 6 Wave 1 cities), and 22 Charlotte sub-service pillars (Land 8, Forestry 8, Brush 6) — 43 service pages live.
 
 ## 11. Build phases
 
