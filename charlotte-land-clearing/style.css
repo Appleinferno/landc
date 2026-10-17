@@ -3489,3 +3489,150 @@ form[data-estimate-form] button[aria-busy="true"] {
     border-color: #CBD5E1;
   }
 }
+
+/* ==========================================================================
+   HOMEPAGE SPECIALTY CARDS & FAQ SECTION
+   ========================================================================== */
+.service-catalog__grid-wrapper--two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+  margin: 28px 0 0;
+  padding: 0;
+}
+
+.service-catalog__card-heading--navy-bold {
+  color: var(--clc-navy);
+  font-size: clamp(1.3rem, 2.2vw, 1.55rem);
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0 0 12px;
+}
+
+.service-catalog__card-list {
+  margin: 0 0 22px;
+  padding-left: 20px;
+  color: var(--clc-text);
+  font-size: 0.96rem;
+  line-height: 1.65;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.service-catalog__card-list li strong {
+  color: var(--clc-navy);
+}
+
+.home-faq {
+  background: #FFFFFF;
+  padding: clamp(60px, 7vw, 90px) 0;
+  border-top: 1px solid var(--clc-border-subtle);
+}
+
+.home-faq__container-inner {
+  max-width: 980px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3.5vw, 48px);
+}
+
+.home-faq__head-zone {
+  max-width: 760px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.home-faq__eyebrow--gold-underline {
+  display: inline-block;
+  color: var(--clc-navy);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--clc-gold);
+}
+
+.home-faq__heading--navy-clamp {
+  color: var(--clc-navy);
+  font-size: clamp(1.7rem, 3.2vw, 2.35rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.home-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.home-faq__item {
+  background: var(--clc-tint);
+  border: 1.5px solid var(--clc-border-subtle);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.home-faq__item[open] {
+  background: #FFFFFF;
+  border-color: var(--clc-gold);
+  box-shadow: var(--clc-shadow-card);
+}
+
+.home-faq__q {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  cursor: pointer;
+  color: var(--clc-navy);
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.home-faq__q::-webkit-details-marker {
+  display: none;
+}
+
+.home-faq__q::after {
+  content: "+";
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid var(--clc-border-subtle);
+  font-size: 1.2rem;
+  color: var(--clc-navy);
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.home-faq__item[open] .home-faq__q::after {
+  transform: rotate(45deg);
+  background: var(--clc-gold);
+  border-color: var(--clc-gold);
+}
+
+.home-faq__a {
+  padding: 0 24px 22px;
+  color: var(--clc-text);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 960px) {
+  .service-catalog__grid-wrapper--two-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
