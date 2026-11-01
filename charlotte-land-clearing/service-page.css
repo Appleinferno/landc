@@ -350,6 +350,8 @@ a.svc-area-card:hover::after { transform: translate(4px, -50%); }
 .svc-figure { margin: 0; background: #FFFFFF; border-radius: 18px; padding: 10px; box-shadow: var(--clc-shadow-card); }
 .svc-figure img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 12px; }
 .svc-figure figcaption { font-size: .86rem; padding: 12px 8px 4px; color: var(--clc-text); }
+.svc-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 32px; }
+@media (max-width: 640px) { .svc-gallery { grid-template-columns: 1fr; } }
 .svc-callout {
   background: var(--clc-navy);
   color: #D3DDEB;

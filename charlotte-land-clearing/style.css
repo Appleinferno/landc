@@ -1301,6 +1301,18 @@ img {
   margin: 0 0 18px;
 }
 
+.site-footer__brand-text--light-muted a {
+  color: #D3DDEB;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+  transition: color .2s ease;
+}
+
+.site-footer__brand-text--light-muted a:hover {
+  color: var(--clc-gold);
+}
+
 .site-footer__col-heading--white-uppercase {
   color: #FFFFFF;
   font-size: 0.95rem;
@@ -1331,6 +1343,35 @@ img {
 
 .site-footer__link-item--gold-hover:hover {
   color: var(--clc-gold);
+}
+
+/* Footer map: free keyless Google Maps embed of Charlotte, NC */
+.site-footer__map {
+  margin: 0 0 40px;
+}
+
+.site-footer__map-frame {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(242, 200, 75, 0.35);
+  background: #0F1B30;
+}
+
+.site-footer__map-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .site-footer__map-frame {
+    height: 260px;
+  }
 }
 
 .site-footer__bottom-row {
@@ -2312,8 +2353,13 @@ img {
 }
 
 @media (max-width: 768px) {
+  /* Reserve room for the fixed CTA bar inside the navy footer (not on body)
+     so no light seam shows between the footer and the bar. */
   body {
-    padding-bottom: 74px !important;
+    padding-bottom: 0 !important;
+  }
+  .site-footer {
+    padding-bottom: calc(30px + 74px + env(safe-area-inset-bottom, 0px));
   }
   .mobile-sticky-cta {
     display: grid;
