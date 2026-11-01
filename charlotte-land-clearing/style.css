@@ -1345,19 +1345,29 @@ img {
   color: var(--clc-gold);
 }
 
-/* Footer map: free keyless Google Maps embed of Charlotte, NC */
-.site-footer__map {
-  margin: 0 0 40px;
+/* Pre-footer map section: free keyless Google Maps embed of Charlotte, NC */
+.site-map-section {
+  background: var(--clc-tint);
+  padding: clamp(44px, 5vw, 64px) 0;
+  border-top: 1px solid var(--clc-border-subtle);
+}
+
+.site-map-section__heading {
+  color: var(--clc-navy);
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  font-weight: 800;
+  margin: 0 0 18px;
 }
 
 .site-footer__map-frame {
   position: relative;
   width: 100%;
-  height: 340px;
-  border-radius: 10px;
+  height: 360px;
+  border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(242, 200, 75, 0.35);
-  background: #0F1B30;
+  border: 1px solid var(--clc-border-subtle);
+  box-shadow: var(--clc-shadow-card);
+  background: #E2E8F0;
 }
 
 .site-footer__map-frame iframe {
@@ -3502,6 +3512,7 @@ form[data-estimate-form] button[aria-busy="true"] {
   .svc-trust,
   .svc-section,
   .svc-cta,
+  .site-map-section,
   .site-footer {
     display: none !important;
   }
