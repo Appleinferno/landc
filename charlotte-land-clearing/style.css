@@ -1345,29 +1345,50 @@ img {
   color: var(--clc-gold);
 }
 
-/* Pre-footer map section: free keyless Google Maps embed of Charlotte, NC */
+/* Pre-footer map section: free keyless Google Maps embed of Charlotte, NC.
+   On every page (including home) the map is cut into the Queen City crown
+   from the logo (images/logo/lockup-on-navy.svg), with a "See the Full Map"
+   button that jumps to the full map (#service-area-map) in the
+   /free-estimate/ hero, right beside the estimate form. */
 .site-map-section {
-  background: var(--clc-tint);
-  padding: clamp(44px, 5vw, 64px) 0;
+  /* Logo crown path (24 points, bbox x 10-90 / y 8-70 in the logo's
+     100x100 box) normalized to percentages so it scales with any width. */
+  --clc-crown-shape: polygon(
+    50% 0%, 57.65% 24.39%, 50.15% 24.39%, 64.45% 46.06%, 56.95% 46.06%,
+    71.25% 67.74%, 88.86% 51.77%, 80.74% 51.77%, 98.35% 35.81%, 90.23% 35.81%,
+    100% 19.35%, 87.5% 100%, 50% 90.32%, 12.5% 100%, 0% 19.35%,
+    9.78% 35.81%, 1.65% 35.81%, 19.26% 51.77%, 11.14% 51.77%, 28.75% 67.74%,
+    43.05% 46.06%, 35.55% 46.06%, 49.85% 24.39%, 42.35% 24.39%
+  );
+  --clc-crown-rim: 3px;
+  background:
+    radial-gradient(ellipse 60% 55% at 50% 58%, rgba(27, 43, 72, 0.07), transparent 70%),
+    var(--clc-tint);
+  padding: clamp(44px, 5vw, 72px) 0;
   border-top: 1px solid var(--clc-border-subtle);
+  text-align: center;
 }
 
 .site-map-section__heading {
   color: var(--clc-navy);
   font-size: clamp(1.25rem, 2.2vw, 1.65rem);
   font-weight: 800;
-  margin: 0 0 18px;
+  margin: 0 0 clamp(18px, 2.4vw, 28px);
 }
 
+/* Crown stage: the gold rim is drawn with stacked drop-shadows on this
+   parent so it follows the clip-path applied to the iframe inside it. */
 .site-footer__map-frame {
   position: relative;
-  width: 100%;
-  height: 360px;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--clc-border-subtle);
-  box-shadow: var(--clc-shadow-card);
-  background: #E2E8F0;
+  width: min(100%, 980px);
+  aspect-ratio: 80 / 62;
+  margin: 0 auto;
+  filter:
+    drop-shadow(var(--clc-crown-rim) 0 0 var(--clc-gold))
+    drop-shadow(calc(var(--clc-crown-rim) * -1) 0 0 var(--clc-gold))
+    drop-shadow(0 var(--clc-crown-rim) 0 var(--clc-gold))
+    drop-shadow(0 calc(var(--clc-crown-rim) * -1) 0 var(--clc-gold))
+    drop-shadow(0 18px 26px rgba(27, 43, 72, 0.22));
 }
 
 .site-footer__map-frame iframe {
@@ -1376,11 +1397,342 @@ img {
   width: 100%;
   height: 100%;
   border: 0;
+  background: #E2E8F0;
+  clip-path: var(--clc-crown-shape);
+}
+
+.site-map-section__full-map-btn {
+  display: inline-block;
+  margin-top: clamp(22px, 3vw, 34px);
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-size: 0.98rem;
+  font-weight: 800;
+  background: var(--clc-gold);
+  color: var(--clc-navy);
+  text-decoration: none;
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.site-map-section__full-map-btn:hover,
+.site-map-section__full-map-btn:focus-visible {
+  background: var(--clc-gold-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--clc-shadow-button-hover);
+}
+
+.site-map-section__full-map-btn:focus-visible {
+  outline: 3px solid var(--clc-navy);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   /free-estimate/ page: above-the-fold conversion hero
+   Headline + service area map (left, #service-area-map) + form (right, #estimate-form)
+   ========================================================================== */
+#estimate-form,
+#service-area-map {
+  scroll-margin-top: 96px; /* clear the sticky .site-navigation bar */
+}
+
+.est-hero {
+  background:
+    radial-gradient(900px 420px at 85% 0%, rgba(242, 200, 75, 0.14), transparent 60%),
+    linear-gradient(180deg, var(--clc-navy) 0%, var(--clc-navy-dark) 100%);
+  color: #FFFFFF;
+  padding: clamp(22px, 2.6vw, 36px) 0 clamp(36px, 4vw, 56px);
+}
+
+.est-hero__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3.5vw, 48px);
+}
+
+.est-hero__head {
+  text-align: center;
+  margin-bottom: clamp(18px, 2.2vw, 28px);
+}
+
+.est-hero__eyebrow {
+  display: inline-block;
+  color: var(--clc-gold);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.est-hero__title {
+  color: #FFFFFF;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+}
+
+.est-hero__title span {
+  color: var(--clc-gold);
+}
+
+.est-hero__checks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.est-hero__checks li::before {
+  content: "\2713";
+  color: var(--clc-gold);
+  font-weight: 800;
+  margin-right: 7px;
+}
+
+.est-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(18px, 2.2vw, 30px);
+  align-items: stretch;
+}
+
+/* Map card: stretches to the form's height on desktop */
+.est-map {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+}
+
+.est-map__bar {
+  padding: 16px 20px;
+  border-bottom: 3px solid var(--clc-gold);
+}
+
+.est-map__title {
+  color: var(--clc-navy);
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin: 0 0 2px;
+}
+
+.est-map__sub {
+  color: var(--clc-text);
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+.est-map__frame {
+  position: relative;
+  flex: 1;
+  min-height: 300px;
+  background: #E2E8F0;
+}
+
+.est-map__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Compact form card (reuses the homepage form field styles) */
+.est-form.estimate-request__form-card--elevated-white {
+  padding: 26px 26px 22px;
+  color: var(--clc-text);
+}
+
+.est-form__title {
+  color: var(--clc-navy);
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin: 0 0 4px;
+}
+
+.est-form__sub {
+  color: var(--clc-text);
+  font-size: 0.9rem;
+  margin: 0 0 16px;
+}
+
+.est-form__sub a {
+  color: var(--clc-navy);
+  font-weight: 700;
+}
+
+.est-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 14px;
+}
+
+.est-form__field--full {
+  grid-column: 1 / -1;
+}
+
+.est-form .estimate-request__form-label {
+  font-size: 0.84rem;
+  margin-bottom: 4px;
+}
+
+.est-form .estimate-request__form-input,
+.est-form .estimate-request__form-select {
+  min-height: 46px;
+  padding: 10px 14px;
+}
+
+.est-form .estimate-request__form-textarea {
+  min-height: 84px;
+  padding: 10px 14px;
+}
+
+.est-form .estimate-request__form-submit--pill-gold {
+  margin-top: 16px;
+}
+
+.est-form__fine {
+  text-align: center;
+  color: var(--clc-text);
+  font-size: 0.8rem;
+  margin: 10px 0 0;
+}
+
+/* Below the fold: what happens next */
+.est-next {
+  background: var(--clc-tint);
+  padding: clamp(40px, 5vw, 64px) 0;
+  border-bottom: 1px solid var(--clc-border-subtle);
+}
+
+.est-next__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3.5vw, 48px);
+  text-align: center;
+}
+
+.est-next__title {
+  color: var(--clc-navy);
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  font-weight: 800;
+  margin: 0 0 22px;
+}
+
+.est-next__steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  list-style: none;
+  counter-reset: est-step;
+  margin: 0 0 26px;
+  padding: 0;
+  text-align: left;
+}
+
+.est-next__steps li {
+  counter-increment: est-step;
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid var(--clc-border-subtle);
+  border-top: 4px solid var(--clc-gold);
+  border-radius: 12px;
+  padding: 20px 20px 20px 62px;
+  color: var(--clc-text);
+  line-height: 1.55;
+  box-shadow: var(--clc-shadow-card);
+}
+
+.est-next__steps li::before {
+  content: counter(est-step);
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--clc-navy);
+  color: var(--clc-gold);
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+}
+
+.est-next__steps strong {
+  display: block;
+  color: var(--clc-navy);
+}
+
+.est-next__call {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 12px;
+  color: var(--clc-text);
+  font-weight: 600;
+}
+
+.est-next__call a {
+  color: var(--clc-navy);
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+@media (max-width: 960px) {
+  .est-hero__grid {
+    grid-template-columns: 1fr;
+  }
+  /* Map stays first (kept short) so a "See the Full Map" jump lands with the form directly below */
+  .est-map__frame {
+    flex: none;
+    height: 230px;
+    min-height: 0;
+  }
+  .est-next__steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .est-form__grid {
+    grid-template-columns: 1fr;
+  }
+  .est-hero__checks {
+    font-size: 0.8rem;
+    gap: 4px 14px;
+  }
+  .est-hero__checks li:last-child {
+    display: none; /* keep the hero short so the form stays near the fold */
+  }
+  .est-map__bar {
+    padding: 12px 16px;
+  }
+  .est-map__title {
+    font-size: 1rem;
+  }
+  .est-map__sub {
+    display: none;
+  }
+  .est-map__frame {
+    height: 200px;
+  }
 }
 
 @media (max-width: 768px) {
-  .site-footer__map-frame {
-    height: 260px;
+  .site-map-section {
+    --clc-crown-rim: 2px;
   }
 }
 
@@ -3563,7 +3915,50 @@ form[data-estimate-form] button[aria-busy="true"] {
   font-size: clamp(1.3rem, 2.2vw, 1.55rem);
   font-weight: 800;
   line-height: 1.25;
-  margin: 0 0 12px;
+  margin: 0 0 14px;
+}
+
+.service-catalog__card-intro-row {
+  display: grid;
+  grid-template-columns: 1fr 210px;
+  gap: 20px;
+  align-items: center;
+  margin: 0 0 18px;
+}
+
+.service-catalog__card-intro-row .service-catalog__card-text--slate-regular {
+  margin: 0;
+}
+
+.service-catalog__card-thumb {
+  margin: 0;
+  width: 210px;
+  height: 210px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1.5px solid var(--clc-border-subtle);
+  box-shadow: 0 8px 20px rgba(27, 43, 72, 0.10);
+  background: var(--clc-tint);
+}
+
+.service-catalog__card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .service-catalog__card-intro-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .service-catalog__card-thumb {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
 }
 
 .service-catalog__card-list {

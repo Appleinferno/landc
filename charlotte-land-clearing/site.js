@@ -313,7 +313,7 @@
         'Estimated total: ' + currency(low * acres) + '–' + currency(high * acres),
         'Estimated per acre: ' + currency(low) + '–' + currency(high),
         'Provisional condition adjustments; not a quote. Stump removal, hauling, grading, permits, and minimum charges need confirmation.',
-        'Free on-site estimate: (828) 576-3931 | https://landclearingcharlotte.com/#estimate-form'
+        'Free on-site estimate: (828) 576-3931 | https://landclearingcharlotte.com/free-estimate/'
       ].join('\n');
     }
 
