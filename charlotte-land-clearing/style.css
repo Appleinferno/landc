@@ -1351,44 +1351,50 @@ img {
    button that jumps to the full map (#service-area-map) in the
    /free-estimate/ hero, right beside the estimate form. */
 .site-map-section {
-  /* Logo crown path (24 points, bbox x 10-90 / y 8-70 in the logo's
-     100x100 box) normalized to percentages so it scales with any width.
-     The two outer tier ledges (3% / 97% at y 35.81%) are nudged inside the
-     crown's outer edge (the logo has them 1.65% / 98.35%, slightly outside),
-     which removed stray sliver lines along the left and right edges.
-
-     Map placement: Google centers the embed on Charlotte in the middle of the
-     iframe. The iframe is made --clc-crown-map-stretch times taller than the
-     crown (overflowing below it), which moves that center point down to
-     stretch / 2 of the crown's height (1.5 -> 75%, the wide crown base).
-     Each y value is divided by the stretch so the clipped crown shape still
-     lines up exactly with the crown frame. Tweak only the stretch value. */
-  --clc-crown-map-stretch: 1.5;
+  /* Logo crown path (bbox x 10-90 / y 8-70 in the logo's 100x100 box)
+     normalized to percentages so it scales with any width.
+     - The two outer tier ledges (3.5% / 96.5%) are nudged inside the crown's
+       outer edge (the logo has them 1.65% / 98.35%, slightly outside), which
+       removed stray sliver lines along the left and right edges.
+     - Upper spire y values are scaled by 0.85 so the solid crown base is
+       taller and the narrow center-spire notch sits above the vertical center
+       where Google draws the "Charlotte" label (preventing the "C" from
+       clipping on narrow mobile screens).
+     - The logo's shallow V bottom is flattened, and the crown sits on a
+       full-width "Google attribution bar" (--clc-crown-bar: 66px) tall enough
+       to hold Google's satellite preview (52px, bottom-left), logo
+       (bottom-center), round pan control (64px, bottom-right), and Map data /
+       Terms credits without slicing any control in half. */
+  --clc-crown-bar: 66px;
+  --clc-crown-h: (100% - var(--clc-crown-bar));
   --clc-crown-shape: polygon(
-    50% calc(0% / var(--clc-crown-map-stretch)),
-    57.65% calc(24.39% / var(--clc-crown-map-stretch)),
-    50.15% calc(24.39% / var(--clc-crown-map-stretch)),
-    64.45% calc(46.06% / var(--clc-crown-map-stretch)),
-    56.95% calc(46.06% / var(--clc-crown-map-stretch)),
-    71.25% calc(67.74% / var(--clc-crown-map-stretch)),
-    88.86% calc(51.77% / var(--clc-crown-map-stretch)),
-    80.74% calc(51.77% / var(--clc-crown-map-stretch)),
-    97% calc(35.81% / var(--clc-crown-map-stretch)),
-    90.23% calc(35.81% / var(--clc-crown-map-stretch)),
-    100% calc(19.35% / var(--clc-crown-map-stretch)),
-    87.5% calc(100% / var(--clc-crown-map-stretch)),
-    50% calc(90.32% / var(--clc-crown-map-stretch)),
-    12.5% calc(100% / var(--clc-crown-map-stretch)),
-    0% calc(19.35% / var(--clc-crown-map-stretch)),
-    9.78% calc(35.81% / var(--clc-crown-map-stretch)),
-    3% calc(35.81% / var(--clc-crown-map-stretch)),
-    19.26% calc(51.77% / var(--clc-crown-map-stretch)),
-    11.14% calc(51.77% / var(--clc-crown-map-stretch)),
-    28.75% calc(67.74% / var(--clc-crown-map-stretch)),
-    43.05% calc(46.06% / var(--clc-crown-map-stretch)),
-    35.55% calc(46.06% / var(--clc-crown-map-stretch)),
-    49.85% calc(24.39% / var(--clc-crown-map-stretch)),
-    42.35% calc(24.39% / var(--clc-crown-map-stretch))
+    50% 0%,
+    57.65% calc(var(--clc-crown-h) * 0.2073),
+    50.15% calc(var(--clc-crown-h) * 0.2073),
+    64.45% calc(var(--clc-crown-h) * 0.3915),
+    56.95% calc(var(--clc-crown-h) * 0.3915),
+    71.25% calc(var(--clc-crown-h) * 0.5758),
+    88.86% calc(var(--clc-crown-h) * 0.4400),
+    80.74% calc(var(--clc-crown-h) * 0.4400),
+    96.5% calc(var(--clc-crown-h) * 0.3044),
+    90.23% calc(var(--clc-crown-h) * 0.3044),
+    100% calc(var(--clc-crown-h) * 0.1645),
+    87.5% calc(var(--clc-crown-h)),
+    100% calc(var(--clc-crown-h)),
+    100% 100%,
+    0% 100%,
+    0% calc(var(--clc-crown-h)),
+    12.5% calc(var(--clc-crown-h)),
+    0% calc(var(--clc-crown-h) * 0.1645),
+    9.78% calc(var(--clc-crown-h) * 0.3044),
+    3.5% calc(var(--clc-crown-h) * 0.3044),
+    19.26% calc(var(--clc-crown-h) * 0.4400),
+    11.14% calc(var(--clc-crown-h) * 0.4400),
+    28.75% calc(var(--clc-crown-h) * 0.5758),
+    43.05% calc(var(--clc-crown-h) * 0.3915),
+    35.55% calc(var(--clc-crown-h) * 0.3915),
+    49.85% calc(var(--clc-crown-h) * 0.2073),
+    42.35% calc(var(--clc-crown-h) * 0.2073)
   );
   --clc-crown-rim: 3px;
   background:
@@ -1407,11 +1413,15 @@ img {
 }
 
 /* Crown stage: the gold rim is drawn with stacked drop-shadows on this
-   parent so it follows the clip-path applied to the iframe inside it. */
+   parent so it follows the clip-path applied to the iframe inside it.
+   content-box sizing: the aspect-ratio sizes the crown itself, and the
+   bottom padding adds the attribution bar underneath it. */
 .site-footer__map-frame {
   position: relative;
+  box-sizing: content-box;
   width: min(100%, 980px);
   aspect-ratio: 80 / 62;
+  padding-bottom: var(--clc-crown-bar);
   margin: 0 auto;
   filter:
     drop-shadow(var(--clc-crown-rim) 0 0 var(--clc-gold))
@@ -1423,10 +1433,9 @@ img {
 
 .site-footer__map-frame iframe {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
-  height: calc(100% * var(--clc-crown-map-stretch));
+  height: 100%;
   border: 0;
   background: #E2E8F0;
   clip-path: var(--clc-crown-shape);
@@ -1822,8 +1831,53 @@ img {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 16px 24px;
   font-size: 0.85rem;
+}
+
+.site-footer__social-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.site-footer__social-link:hover,
+.site-footer__social-link:focus-visible {
+  color: var(--clc-navy);
+  background: var(--clc-gold);
+  border-color: var(--clc-gold);
+  transform: translateY(-2px);
+}
+
+.site-footer__social-link:focus-visible {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 2px;
+}
+
+@media (max-width: 1100px) {
+  .site-footer__bottom-row {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 /* ==========================================================================
