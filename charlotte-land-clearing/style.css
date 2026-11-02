@@ -1468,6 +1468,64 @@ img {
     49.85% calc(var(--clc-crown-h) * 0.2073),
     42.35% calc(var(--clc-crown-h) * 0.2073)
   );
+  --clc-crown-border-shape: polygon(
+    50% 0%,
+    57.65% calc(var(--clc-crown-h) * 0.2073),
+    50.15% calc(var(--clc-crown-h) * 0.2073),
+    64.45% calc(var(--clc-crown-h) * 0.3915),
+    56.95% calc(var(--clc-crown-h) * 0.3915),
+    71.25% calc(var(--clc-crown-h) * 0.5758),
+    88.86% calc(var(--clc-crown-h) * 0.4400),
+    80.74% calc(var(--clc-crown-h) * 0.4400),
+    96.5% calc(var(--clc-crown-h) * 0.3044),
+    90.23% calc(var(--clc-crown-h) * 0.3044),
+    100% calc(var(--clc-crown-h) * 0.1645),
+    87.5% calc(var(--clc-crown-h)),
+    100% calc(var(--clc-crown-h)),
+    100% 100%,
+    0% 100%,
+    0% calc(var(--clc-crown-h)),
+    12.5% calc(var(--clc-crown-h)),
+    0% calc(var(--clc-crown-h) * 0.1645),
+    9.78% calc(var(--clc-crown-h) * 0.3044),
+    3.5% calc(var(--clc-crown-h) * 0.3044),
+    19.26% calc(var(--clc-crown-h) * 0.4400),
+    11.14% calc(var(--clc-crown-h) * 0.4400),
+    28.75% calc(var(--clc-crown-h) * 0.5758),
+    43.05% calc(var(--clc-crown-h) * 0.3915),
+    35.55% calc(var(--clc-crown-h) * 0.3915),
+    49.85% calc(var(--clc-crown-h) * 0.2073),
+    42.35% calc(var(--clc-crown-h) * 0.2073),
+    50% 0%,
+    50% calc(0% + (var(--clc-crown-rim) * 2.11)),
+    calc(42.35% + (var(--clc-crown-rim) * 1.67)) calc(var(--clc-crown-h) * 0.2073 - (var(--clc-crown-rim) * 1.00)),
+    calc(49.85% + (var(--clc-crown-rim) * 2.64)) calc(var(--clc-crown-h) * 0.2073 - (var(--clc-crown-rim) * 1.00)),
+    calc(35.55% + (var(--clc-crown-rim) * 2.64)) calc(var(--clc-crown-h) * 0.3915 - (var(--clc-crown-rim) * 1.00)),
+    calc(43.05% + (var(--clc-crown-rim) * 2.64)) calc(var(--clc-crown-h) * 0.3915 - (var(--clc-crown-rim) * 1.00)),
+    calc(28.75% + (var(--clc-crown-rim) * 0.14)) calc(var(--clc-crown-h) * 0.5758 + (var(--clc-crown-rim) * 1.21)),
+    calc(11.14% - (var(--clc-crown-rim) * 4.02)) calc(var(--clc-crown-h) * 0.4400 - (var(--clc-crown-rim) * 1.00)),
+    calc(19.26% - (var(--clc-crown-rim) * 3.65)) calc(var(--clc-crown-h) * 0.4400 - (var(--clc-crown-rim) * 1.00)),
+    calc(3.5% - (var(--clc-crown-rim) * 3.65)) calc(var(--clc-crown-h) * 0.3044 - (var(--clc-crown-rim) * 1.00)),
+    calc(9.78% - (var(--clc-crown-rim) * 2.44)) calc(var(--clc-crown-h) * 0.3044 - (var(--clc-crown-rim) * 1.00)),
+    calc(0% + (var(--clc-crown-rim) * 1.69)) calc(var(--clc-crown-h) * 0.1645 + (var(--clc-crown-rim) * 3.06)),
+    calc(12.5% + (var(--clc-crown-rim) * 1.24)) calc(var(--clc-crown-h) + (var(--clc-crown-rim) * 1.00)),
+    calc(0% + (var(--clc-crown-rim) * 1.00)) calc(var(--clc-crown-h) + (var(--clc-crown-rim) * 1.00)),
+    calc(0% + (var(--clc-crown-rim) * 1.00)) calc(100% - (var(--clc-crown-rim) * 1.00)),
+    calc(100% - (var(--clc-crown-rim) * 1.00)) calc(100% - (var(--clc-crown-rim) * 1.00)),
+    calc(100% - (var(--clc-crown-rim) * 1.00)) calc(var(--clc-crown-h) + (var(--clc-crown-rim) * 1.00)),
+    calc(87.5% - (var(--clc-crown-rim) * 1.24)) calc(var(--clc-crown-h) + (var(--clc-crown-rim) * 1.00)),
+    calc(100% - (var(--clc-crown-rim) * 1.69)) calc(var(--clc-crown-h) * 0.1645 + (var(--clc-crown-rim) * 3.07)),
+    calc(90.23% + (var(--clc-crown-rim) * 2.44)) calc(var(--clc-crown-h) * 0.3044 - (var(--clc-crown-rim) * 1.00)),
+    calc(96.5% + (var(--clc-crown-rim) * 3.65)) calc(var(--clc-crown-h) * 0.3044 - (var(--clc-crown-rim) * 1.00)),
+    calc(80.74% + (var(--clc-crown-rim) * 3.65)) calc(var(--clc-crown-h) * 0.4400 - (var(--clc-crown-rim) * 1.00)),
+    calc(88.86% + (var(--clc-crown-rim) * 4.02)) calc(var(--clc-crown-h) * 0.4400 - (var(--clc-crown-rim) * 1.00)),
+    calc(71.25% - (var(--clc-crown-rim) * 0.14)) calc(var(--clc-crown-h) * 0.5758 + (var(--clc-crown-rim) * 1.21)),
+    calc(56.95% - (var(--clc-crown-rim) * 2.64)) calc(var(--clc-crown-h) * 0.3915 - (var(--clc-crown-rim) * 1.00)),
+    calc(64.45% - (var(--clc-crown-rim) * 2.64)) calc(var(--clc-crown-h) * 0.3915 - (var(--clc-crown-rim) * 1.00)),
+    calc(50.15% - (var(--clc-crown-rim) * 2.64)) calc(var(--clc-crown-h) * 0.2073 - (var(--clc-crown-rim) * 1.00)),
+    calc(57.65% - (var(--clc-crown-rim) * 1.67)) calc(var(--clc-crown-h) * 0.2073 - (var(--clc-crown-rim) * 1.00)),
+    50% calc(0% + (var(--clc-crown-rim) * 2.11))
+  );
   --clc-crown-rim: 3px;
   background:
     radial-gradient(ellipse 60% 55% at 50% 58%, rgba(27, 43, 72, 0.07), transparent 70%),
@@ -1485,9 +1543,9 @@ img {
 }
 
 /* Crown stage: the gold rim is drawn with stacked drop-shadows on this
-   parent so it follows the clip-path applied to the iframe inside it.
-   content-box sizing: the aspect-ratio sizes the crown itself, and the
-   bottom padding adds the attribution bar underneath it. */
+   parent PLUS an explicit ::after crown-ring polygon overlay so iOS Safari
+   (which drops parent drop-shadows on GPU-composited cross-origin iframes)
+   always renders a crisp gold crown outline. */
 .site-footer__map-frame {
   position: relative;
   box-sizing: content-box;
@@ -1503,6 +1561,26 @@ img {
     drop-shadow(0 18px 26px rgba(27, 43, 72, 0.22));
 }
 
+.site-footer__map-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--clc-gold);
+  clip-path: var(--clc-crown-shape);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.site-footer__map-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--clc-gold);
+  clip-path: var(--clc-crown-border-shape);
+  pointer-events: none;
+  z-index: 2;
+}
+
 .site-footer__map-frame iframe {
   position: absolute;
   inset: 0;
@@ -1511,6 +1589,7 @@ img {
   border: 0;
   background: #E2E8F0;
   clip-path: var(--clc-crown-shape);
+  z-index: 1;
 }
 
 /* Desktop: a wider, larger crown so more of the Charlotte map shows inside.
@@ -1892,7 +1971,7 @@ img {
 
 @media (max-width: 768px) {
   .site-map-section {
-    --clc-crown-rim: 2px;
+    --clc-crown-rim: 2.5px;
   }
 }
 
