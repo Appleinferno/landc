@@ -388,5 +388,130 @@
 
     update();
   });
+
+  // ---- Homepage Hero Curved Red CTA Arrow ----
+  var heroArrow = document.getElementById('hero-cta-arrow');
+  var heroShaft = document.getElementById('hero-cta-arrow-shaft');
+  var heroHead = document.getElementById('hero-cta-arrow-head');
+  var heroContainer = document.querySelector('.hero-intro__inner-container');
+  var estBtn = document.getElementById('hero-estimate-btn');
+  var callBtn = document.getElementById('hero-call-btn');
+  var trustBadges = document.querySelector('.hero-intro__trust-badges');
+  var mediaCard = document.getElementById('hero-media-card');
+
+  function updateHeroArrow() {
+    if (!heroArrow || !heroShaft || !heroHead || !heroContainer || !estBtn || !callBtn || !trustBadges || !mediaCard) return;
+    if (window.innerWidth <= 960) return;
+
+    var cRect = heroContainer.getBoundingClientRect();
+    var eRect = estBtn.getBoundingClientRect();
+    var callRect = callBtn.getBoundingClientRect();
+    var bRect = trustBadges.getBoundingClientRect();
+    var mRect = mediaCard.getBoundingClientRect();
+
+    var W = Math.round(cRect.width);
+    var H = Math.round(cRect.height);
+    if (!W || !H) return;
+    heroArrow.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+
+    // Safe vertical corridor below the Call button and above the yellow checkmarks
+    var callBottom = callRect.bottom - cRect.top;
+    var firstBadgeItem = trustBadges.querySelector('.hero-intro__badge-item');
+    var checksTop = firstBadgeItem ? (firstBadgeItem.getBoundingClientRect().top - cRect.top) : (bRect.top - cRect.top + 20);
+    var corridorY = callBottom + (checksTop - callBottom) * 0.46;
+
+    // Origin point: closer to the bottom-left of the right-side image
+    var x0 = (mRect.left - cRect.left) + 24;
+    var y0 = Math.min((mRect.top - cRect.top) + mRect.height * 0.85, checksTop - 26);
+
+    // Target point: lower-right curve of the red "Request Free Estimate" button
+    var tipX = (eRect.right - cRect.left) + 4;
+    var tipY = (eRect.bottom - cRect.top) - 9;
+
+    // Arrowhead arrival direction vector (pointing up-and-left into the button)
+    var dirX = -0.885;
+    var dirY = -0.465;
+    var neckX = tipX - dirX * 15;
+    var neckY = tipY - dirY * 15;
+
+    var spanX = x0 - neckX;
+    var c1X = x0 - spanX * 0.34;
+    var c1Y = Math.min(checksTop - 16, Math.max(y0 + 16, corridorY + 12));
+    var c2X = neckX + spanX * 0.24;
+    var c2Y = Math.min(checksTop - 18, Math.max(callBottom + 28, corridorY + 8));
+
+    // Sample cubic Bezier along [0..1] to build a smooth tapered filled shaft
+    var steps = 36;
+    var upperPts = [];
+    var lowerPts = [];
+    var tailHalfWidth = 1.1;
+    var neckHalfWidth = 5.2;
+
+    function bezierPt(t) {
+      var u = 1 - t;
+      var tt = t * t, uu = u * u;
+      var uuu = uu * u, ttt = tt * t;
+      return {
+        x: uuu * x0 + 3 * uu * t * c1X + 3 * u * tt * c2X + ttt * neckX,
+        y: uuu * y0 + 3 * uu * t * c1Y + 3 * u * tt * c2Y + ttt * neckY
+      };
+    }
+
+    function bezierTan(t) {
+      var u = 1 - t;
+      var tx = 3 * u * u * (c1X - x0) + 6 * u * t * (c2X - c1X) + 3 * t * t * (neckX - c2X);
+      var ty = 3 * u * u * (c1Y - y0) + 6 * u * t * (c2Y - c1Y) + 3 * t * t * (neckY - c2Y);
+      var len = Math.hypot(tx, ty) || 1;
+      return { x: tx / len, y: ty / len };
+    }
+
+    for (var i = 0; i <= steps; i++) {
+      var t = i / steps;
+      var pt = bezierPt(t);
+      var tan = bezierTan(t);
+      var nx = -tan.y;
+      var ny = tan.x;
+      // Smooth ease-in taper from tail to arrowhead neck
+      var hw = tailHalfWidth + (neckHalfWidth - tailHalfWidth) * Math.pow(t, 0.75);
+      upperPts.push((pt.x + nx * hw).toFixed(1) + ',' + (pt.y + ny * hw).toFixed(1));
+      lowerPts.unshift((pt.x - nx * hw).toFixed(1) + ',' + (pt.y - ny * hw).toFixed(1));
+    }
+
+    var shaftD = 'M ' + upperPts.join(' L ') + ' L ' + lowerPts.join(' L ') + ' Z';
+    heroShaft.setAttribute('d', shaftD);
+
+    // Sculpted flared arrowhead aligned with the arrival tangent at t = 1
+    var endTan = bezierTan(1);
+    var ax = endTan.x, ay = endTan.y;
+    var px = -ay, py = ax;
+    var actualTipX = neckX + ax * 16;
+    var actualTipY = neckY + ay * 16;
+    var wingBack = -7;
+    var wingSpread = 14.5;
+    var notchBack = -1.5;
+
+    var w1x = neckX + ax * wingBack + px * wingSpread;
+    var w1y = neckY + ay * wingBack + py * wingSpread;
+    var w2x = neckX + ax * wingBack - px * wingSpread;
+    var w2y = neckY + ay * wingBack - py * wingSpread;
+    var ncx = neckX + ax * notchBack;
+    var ncy = neckY + ay * notchBack;
+
+    var headD = [
+      'M', actualTipX.toFixed(1), actualTipY.toFixed(1),
+      'Q', (neckX + ax * 4 + px * 6).toFixed(1), (neckY + ay * 4 + py * 6).toFixed(1), w1x.toFixed(1), w1y.toFixed(1),
+      'Q', (ncx + px * 4).toFixed(1), (ncy + py * 4).toFixed(1), ncx.toFixed(1), ncy.toFixed(1),
+      'Q', (ncx - px * 4).toFixed(1), (ncy - py * 4).toFixed(1), w2x.toFixed(1), w2y.toFixed(1),
+      'Q', (neckX + ax * 4 - px * 6).toFixed(1), (neckY + ay * 4 - py * 6).toFixed(1), actualTipX.toFixed(1), actualTipY.toFixed(1),
+      'Z'
+    ].join(' ');
+    heroHead.setAttribute('d', headD);
+  }
+
+  if (heroArrow) {
+    updateHeroArrow();
+    window.addEventListener('load', updateHeroArrow);
+    window.addEventListener('resize', updateHeroArrow);
+  }
 })();
 
