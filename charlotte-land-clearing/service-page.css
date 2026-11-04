@@ -365,40 +365,58 @@ a.svc-area-card:hover::after { transform: translate(4px, -50%); }
 /* ==========================================================================
    7. OTHER SERVICES (city-matched groups)
    ========================================================================== */
-.svc-group { margin-top: 30px; }
+.svc-group {
+  margin-top: 32px;
+  padding: 20px;
+  border-radius: 22px;
+  background: #F1F5FA;
+  border: 1.5px solid #D5E0EE;
+}
 .svc-group:first-of-type { margin-top: 0; }
+.svc-group:not(:has(.svc-chips)) {
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
 .svc-group__head {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px 16px;
-  padding: 18px 22px;
-  border-radius: 14px;
-  background: #FFFFFF;
-  border: 1.5px solid var(--clc-border-subtle);
-  border-left: 6px solid var(--clc-gold);
+  gap: 10px 16px;
+  padding: 16px 26px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1B2B48 0%, #24395E 100%);
+  border: 1.5px solid #121E33;
+  border-left: 7px solid var(--clc-gold);
+  box-shadow: 0 8px 22px rgba(27, 43, 72, .16);
   text-decoration: none;
-  margin-bottom: 14px;
-  transition: box-shadow .2s ease, transform .2s ease;
+  margin-bottom: 16px;
+  transition: background .2s ease, box-shadow .2s ease, transform .2s ease;
 }
+.svc-group__head:last-child { margin-bottom: 0; }
 .svc-group__tag {
   font-size: .68rem;
   font-weight: 800;
   letter-spacing: .1em;
   text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 50px;
-  background: var(--clc-tint);
-  color: var(--clc-navy);
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(242, 200, 75, .18);
+  border: 1px solid rgba(242, 200, 75, .45);
+  color: var(--clc-gold);
 }
-.svc-group__title { color: var(--clc-navy); font-size: 1.15rem; font-weight: 800; }
-.svc-group__cta { margin-left: auto; color: var(--clc-gold-dark); font-weight: 800; font-size: .92rem; }
-a.svc-group__head:hover { transform: translateY(-2px); box-shadow: var(--clc-shadow-card); }
+.svc-group__title { color: #FFFFFF; font-size: 1.15rem; font-weight: 800; }
+.svc-group__cta { margin-left: auto; color: var(--clc-gold); font-weight: 800; font-size: .92rem; }
+a.svc-group__head:hover {
+  background: linear-gradient(135deg, #121E33 0%, #1B2B48 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(27, 43, 72, .26);
+}
 .svc-group__head--land { border-left-color: var(--clc-gold); }
-.svc-group__head--forestry { border-left-color: #2F855A; }
-.svc-group__head--brush { border-left-color: #C05621; }
-.svc-group__head--proposed { border-style: dashed; border-left-style: solid; }
-.svc-group__head--proposed .svc-group__title { color: #475569; }
+.svc-group__head--forestry { border-left-color: #38A169; }
+.svc-group__head--brush { border-left-color: #DD6B20; }
+.svc-group__head--proposed { border-style: dashed; border-left-style: solid; opacity: .85; }
+.svc-group__head--proposed .svc-group__title { color: #CBD5E1; }
 
 .svc-chips {
   display: grid;
@@ -412,18 +430,24 @@ a.svc-group__head:hover { transform: translateY(-2px); box-shadow: var(--clc-sha
   gap: 10px;
   min-height: 56px;
   padding: 14px 18px;
-  border-radius: 12px;
+  border-radius: 14px;
   font-size: .94rem;
   font-weight: 700;
   text-decoration: none;
   color: var(--clc-navy);
-  background: #FFFFFF;
-  border: 1.5px solid var(--clc-border-subtle);
-  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  background: #DCE6F2;
+  border: 1.5px solid #B8C9DF;
+  transition: background .2s ease, transform .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
-a.svc-chip::after { content: "\2192"; color: var(--clc-gold-dark); font-weight: 900; }
-a.svc-chip:hover { transform: translateY(-2px); border-color: var(--clc-gold); box-shadow: 0 8px 20px rgba(27, 43, 72, .1); }
-.svc-chip--proposed { background: transparent; border-style: dashed; color: #64748B; font-weight: 600; }
+a.svc-chip::after { content: "\2192"; color: var(--clc-navy); font-weight: 900; flex-shrink: 0; transition: transform .2s ease; }
+a.svc-chip:hover {
+  background: #CAD9EC;
+  transform: translateY(-2px);
+  border-color: var(--clc-navy);
+  box-shadow: 0 8px 20px rgba(27, 43, 72, .14);
+}
+a.svc-chip:hover::after { transform: translateX(3px); }
+.svc-chip--proposed { background: #E9EFF7; border-style: dashed; color: #64748B; font-weight: 600; }
 
 /* ==========================================================================
    8. WHY CHOOSE US
@@ -513,6 +537,8 @@ a.svc-chip:hover { transform: translateY(-2px); border-color: var(--clc-gold); b
   .svc-form__grid { grid-template-columns: 1fr; }
   .svc-trust__list { grid-template-columns: 1fr; gap: 12px; }
   .svc-hero__actions .svc-btn { width: 100%; }
+  .svc-group { padding: 14px; border-radius: 18px; }
+  .svc-group__head { border-radius: 18px; padding: 14px 18px; }
   .svc-group__cta { margin-left: 0; width: 100%; }
   .svc-cta__actions, .svc-cta__actions .svc-btn { width: 100%; }
 }
