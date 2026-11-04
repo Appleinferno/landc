@@ -538,8 +538,8 @@ img {
 }
 
 .hero-intro__badge-icon--gold-check {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: var(--clc-gold);
   color: var(--clc-navy);
@@ -549,6 +549,12 @@ img {
   font-size: 0.75rem;
   font-weight: 900;
   flex-shrink: 0;
+}
+
+.hero-intro__badge-icon--gold-check svg {
+  display: block;
+  width: 15px;
+  height: 15px;
 }
 
 .hero-intro__media-column {
@@ -3075,9 +3081,13 @@ img {
     font-size: 0.82rem;
   }
   .hero-intro__badge-icon--gold-check {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     font-size: 0.7rem;
+  }
+  .hero-intro__badge-icon--gold-check svg {
+    width: 13px;
+    height: 13px;
   }
   .featured-article__content-zone {
     padding: 24px 18px;
