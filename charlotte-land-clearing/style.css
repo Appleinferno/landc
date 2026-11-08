@@ -4889,11 +4889,6 @@ form[data-estimate-form] button[aria-busy="true"] {
 
 .customer-reviews__quote-body p {
   margin: 0;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  overflow: hidden;
 }
 
 .customer-reviews__card-footer {
