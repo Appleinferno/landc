@@ -66,7 +66,8 @@ All site pages, templates, scripts, and AI-generated content must use these stan
 - **Call Anchor (tel link):** `href="tel:8285763931"`
 - **Schema JSON-LD (`telephone`):** `"+1-828-576-3931"`
 - **Meta Description Format:** `Free estimates: (828) 576-3931.`
-- **Operating Hours:** Mon - Sat: 7:00 AM - 6:30 PM
+- **Operating Hours:** Mon - Sat: 6:00 AM - 6:00 PM
+- **Quote & Contact Responses:** Within 24 hours.
 - **Primary Service Counties:** Charlotte, Mecklenburg, Union, Cabarrus & Gaston Counties, NC
 - **Lead email:** `patrick@landclearingcharlotte.com`
 

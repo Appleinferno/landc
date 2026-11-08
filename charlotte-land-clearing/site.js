@@ -144,7 +144,8 @@
 
   // ---- Estimate forms ----
   // Backend: Formcarry (https://formcarry.com). Submissions are POSTed as JSON with
-  // Accept: application/json; Formcarry replies { code: 200, status: "success" }.
+  // Accept: application/json; Formcarry confirms acceptance with { code: 200 }.
+  // Older responses may instead use { status: "success" }; no form field is needed.
   // Each <form> also has action="<endpoint>" method="POST" so it still works without JS.
   // `_gotcha` is Formcarry's honeypot field name (filtered server-side too).
   // If FORM_ENDPOINT is ever emptied, submissions fall back to a prefilled email to FORM_EMAIL.
@@ -194,7 +195,7 @@
         window.location.href = 'mailto:' + FORM_EMAIL +
           '?subject=' + encodeURIComponent(data.subject || 'Estimate request') +
           '&body=' + encodeURIComponent(body);
-        showSuccess('Almost done.', 'Your email app should have opened with your details filled in. Press send and we\'ll call within one business day, or call (828) 576-3931 now.');
+        showSuccess('Almost done.', 'Your email app should have opened with your details filled in. Press send and we\'ll call within 24 hours, or call (828) 576-3931 now.');
         return;
       }
 
@@ -205,9 +206,13 @@
         body: JSON.stringify(data)
       }).then(function (res) {
         if (!res.ok) throw new Error('HTTP ' + res.status);
-        return res.json().catch(function () { return {}; });
+        return res.json();
       }).then(function (json) {
-        if (json && json.status && json.status !== 'success') throw new Error(json.message || 'Rejected');
+        var hasSuccessCode = json && json.code === 200;
+        var hasLegacySuccess = json && json.code === undefined && json.status === 'success';
+        if ((!hasSuccessCode && !hasLegacySuccess) || (json.status && json.status !== 'success')) {
+          throw new Error((json && json.message) || 'Submission was not accepted');
+        }
         showSuccess();
       }).catch(function () {
         showError();

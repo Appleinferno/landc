@@ -1,5 +1,6 @@
 # AI AGENTS / CONTRIBUTORS: if you add, delete, or rename a page, update sitemap.xml (see /AGENTS.md).
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 
 Sitemap: https://landclearingcharlotte.com/sitemap.xml
