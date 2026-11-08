@@ -195,7 +195,7 @@
         window.location.href = 'mailto:' + FORM_EMAIL +
           '?subject=' + encodeURIComponent(data.subject || 'Estimate request') +
           '&body=' + encodeURIComponent(body);
-        showSuccess('Almost done.', 'Your email app should have opened with your details filled in. Press send and we\'ll call within 24 hours, or call (828) 576-3931 now.');
+        showSuccess('Almost done.', 'Your email app should have opened with your details filled in. Press send and we\'ll call within 24 hours, or call (704) 741-6895 now.');
         return;
       }
 
@@ -318,7 +318,7 @@
         'Estimated total: ' + currency(low * acres) + '–' + currency(high * acres),
         'Estimated per acre: ' + currency(low) + '–' + currency(high),
         'Provisional condition adjustments; not a quote. Stump removal, hauling, grading, permits, and minimum charges need confirmation.',
-        'Free on-site estimate: (828) 576-3931 | https://landclearingcharlotte.com/free-estimate/'
+        'Free on-site estimate: (704) 741-6895 | https://landclearingcharlotte.com/free-estimate/'
       ].join('\n');
     }
 
