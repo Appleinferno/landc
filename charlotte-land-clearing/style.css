@@ -4756,9 +4756,9 @@ form[data-estimate-form] button[aria-busy="true"] {
 
 .customer-reviews__grid {
   display: grid;
-  grid-template-columns: 1.45fr 0.9fr;
-  gap: clamp(24px, 3vw, 36px);
-  max-width: 1180px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.5vw, 32px);
+  max-width: 1280px;
   margin: 0 auto;
   align-items: stretch;
 }
@@ -4804,6 +4804,11 @@ form[data-estimate-form] button[aria-busy="true"] {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+
+.customer-reviews__avatar--slate {
+  background: #4A5B63;
+  color: #FFFFFF;
 }
 
 .customer-reviews__reviewer-info {
@@ -4884,6 +4889,11 @@ form[data-estimate-form] button[aria-busy="true"] {
 
 .customer-reviews__quote-body p {
   margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
 }
 
 .customer-reviews__card-footer {
@@ -4997,7 +5007,16 @@ form[data-estimate-form] button[aria-busy="true"] {
   border-color: #FFFFFF;
 }
 
-@media (max-width: 920px) {
+@media (max-width: 1080px) {
+  .customer-reviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .customer-reviews__card--cta {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 720px) {
   .customer-reviews__grid {
     grid-template-columns: 1fr;
   }
