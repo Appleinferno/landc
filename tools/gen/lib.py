@@ -6,6 +6,8 @@ ROOT = r"h:\Websites\landc\charlotte-land-clearing"
 BASE = "https://landclearingcharlotte.com"
 EMAIL = "patrick@landclearingcharlotte.com"
 FORM_ENDPOINT = "https://formcarry.com/s/za8glfgKic_"
+# Cache-buster for style.css: bump on every stylesheet change (keep in sync with all pages).
+CSS_VER = "20261108"
 
 _pillar = open(os.path.join(ROOT, "land-clearing-charlotte-nc", "index.html"), encoding="utf-8").read()
 _HEADER_RAW = _pillar[_pillar.index('  <aside class="site-topbar"'):_pillar.index('  <main>')]
@@ -16,7 +18,11 @@ IMG_SIZES = {
     "after-land-clearing": (1600, 1200), "before-land-clearing": (1600, 1200),
     "finished-site-prep": (1600, 900), "forestry-mulcher-active": (1600, 900),
     "full-lot-clearing": (1600, 1200), "work-in-progress": (1600, 900),
+    "ctl-mulcher-cleared-lot-excavator": (1184, 888),
+    "ctl-mulcher-mountain-clearing-haul-off": (1184, 888),
 }
+# Images shipped as AVIF with a WebP fallback (no JPG version).
+AVIF_IMAGES = {"ctl-mulcher-cleared-lot-excavator", "ctl-mulcher-mountain-clearing-haul-off"}
 
 SILOS = {
     "land": dict(pillar="land-clearing-charlotte-nc", name="Land Clearing", nav="Land Clearing", head="land", option="Land Clearing"),
@@ -101,6 +107,9 @@ def picture(img, alt="", lazy=True, hero=False, prefix="../"):
     w, h = IMG_SIZES[img]
     a = ' alt="" aria-hidden="true"' if hero else f' alt="{alt}"'
     l = ' loading="lazy"' if lazy and not hero else ""
+    if img in AVIF_IMAGES:
+        return (f'<picture><source type="image/avif" srcset="{prefix}images/{img}.avif">'
+                f'<img src="{prefix}images/{img}.webp"{a}{l} width="{w}" height="{h}"></picture>')
     return (f'<picture><source type="image/webp" srcset="{prefix}images/{img}.webp">'
             f'<img src="{prefix}images/{img}.jpg"{a}{l} width="{w}" height="{h}"></picture>')
 
@@ -111,13 +120,27 @@ def ld_block(graph):
     txt = json.dumps({"@context": "https://schema.org", "@graph": graph}, indent=2, ensure_ascii=False)
     return "\n".join("  " + l for l in txt.splitlines())
 
+SOCIAL_PROFILES = [
+    "https://www.facebook.com/landclearingcharlotte/",
+    "https://www.instagram.com/landclearingcharlotte/",
+    "https://x.com/landclearingcha",
+    "https://www.pinterest.com/landclearingcharlotte/",
+    "https://www.reddit.com/user/landclearingcha/",
+    "https://www.twitch.tv/landclearingcharlotte",
+    "https://www.snapchat.com/@landclearingcha",
+    "https://www.linkedin.com/company/landclearingcharlotte",
+]
+
 def business(city="Charlotte"):
+    # Street address intentionally omitted from schema (location in acquisition).
     return {
         "@type": "LocalBusiness", "@id": f"{BASE}/#business", "name": "Land Clearing Charlotte",
-        "url": f"{BASE}/", "telephone": "+1-828-576-3931",
-        "address": {"@type": "PostalAddress", "streetAddress": "1930 Camden Rd Ste 238", "addressLocality": "Charlotte",
-                    "addressRegion": "NC", "postalCode": "28203", "addressCountry": "US"},
-        "openingHours": "Mo-Sa 07:00-18:30",
+        "url": f"{BASE}/", "telephone": "+1-704-741-6895",
+        "email": "patrick@landclearingcharlotte.com",
+        "openingHours": "Mo-Sa 06:00-18:00",
+        "founder": {"@type": "Person", "name": "Patrick Dinehart"},
+        "parentOrganization": {"@id": f"{BASE}/#organization"},
+        "sameAs": SOCIAL_PROFILES,
         "areaServed": {"@type": "City", "name": city, "containedInPlace": {"@type": "State", "name": "North Carolina"}},
     }
 
@@ -127,10 +150,19 @@ def crumbs(items):
 
 def head(title, meta, url, og_image, ld, extra_css=True, og_type="website"):
     t = title.replace('"', "&quot;")
-    css = '  <link rel="stylesheet" href="../style.css">\n' + ('  <link rel="stylesheet" href="../service-page.css">\n' if extra_css else "")
+    css = f'  <link rel="stylesheet" href="../style.css?v={CSS_VER}">\n' + ('  <link rel="stylesheet" href="../service-page.css">\n' if extra_css else "")
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQTE2PF67P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FQTE2PF67P');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
@@ -197,14 +229,14 @@ def form_card(p, option, city="Charlotte"):
             </div>
             <div class="svc-form__hp" aria-hidden="true"><label>Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
             <button class="svc-form__submit" type="submit">Request My Free Estimate</button>
-            <p class="svc-form__fine">No obligation. Prefer to talk? Call <a href="tel:8285763931">(828) 576-3931</a>.</p>
+            <p class="svc-form__fine">No obligation. Prefer to talk? Call <a href="tel:7047416895">(704) 741-6895</a>.</p>
           </form>
           <div class="svc-form__success" role="status">
             <h3>Thanks, we've got it.</h3>
             <p>{p["form_success"]}</p>
           </div>
           <div class="svc-form__error" role="alert" hidden>
-            <p><strong>Sorry, your request didn't go through.</strong> Please call <a href="tel:8285763931">(828) 576-3931</a> or email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+            <p><strong>Sorry, your request didn't go through.</strong> Please call <a href="tel:7047416895">(704) 741-6895</a> or email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
           </div>
         </div>'''
 
@@ -224,7 +256,7 @@ def trust_bar(items):
 
 def steps_html(steps):
     return "\n".join(f'''          <li class="svc-step">
-            <span class="svc-step__num">{n:02d}</span>
+            <span class="svc-step__num">{n}</span>
             <h3 class="svc-step__title">{t}</h3>
             <p class="svc-step__text">{x}</p>
           </li>''' for n, (t, x) in enumerate(steps, 1))
@@ -250,14 +282,23 @@ def group(silo_key, chips_html, city="Charlotte", city_slug="charlotte-nc", head
             <span class="svc-group__cta">View service &rarr;</span>
           </a>\n'''
     else:
-        head = f'''          <div class="svc-group__head svc-group__head--{s["head"]} svc-group__head--proposed" data-href="../{core_slug}/">
+        head = f'''          <!-- NEXT WAVE: <div class="svc-group__head svc-group__head--{s["head"]} svc-group__head--proposed" data-href="../{core_slug}/">
             <span class="svc-group__tag">Core Service</span>
             <span class="svc-group__title">{title}</span>
-          </div>\n'''
-    return f'''        <div class="svc-group">
-{head}          <div class="svc-chips">
+          </div> -->\n'''
+    chips_block = f'''          <div class="svc-chips">
 {chips_html}
-          </div>
+          </div>'''
+    if "svc-chip--proposed" in chips_html and 'class="svc-chip"' not in chips_html:
+        if omit_head:
+            return (f"        <!-- NEXT WAVE (uncomment specialty service chips as city sub-service pages are published):\n"
+                    f"        <div class=\"svc-group\">\n{chips_block}\n        </div>\n"
+                    f"        -->")
+        chips_block = (f"          <!-- NEXT WAVE (uncomment specialty service chips as city sub-service pages are published):\n"
+                       f"{chips_block}\n"
+                       f"          -->")
+    return f'''        <div class="svc-group">
+{head}{chips_block}
         </div>'''
 
 def other_services_groups(current_slug, city="Charlotte", city_slug="charlotte-nc", built=None):

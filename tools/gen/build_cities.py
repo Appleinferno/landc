@@ -20,9 +20,9 @@ area_pat = re.compile(
     re.S,
 )
 
-# 2. Footer Service Areas block pattern
+# 2. Footer Service Areas block pattern (redesigned <details> accordion footer)
 footer_pat = re.compile(
-    r'(<h4 class="site-footer__col-heading--white-uppercase">Service Areas</h4>\s*<ul class="site-footer__links-list">\n)(.*?)(\n\s*</ul>)',
+    r'(<span>Service Areas</span>.*?</summary>\s*<ul class="site-footer__links-list">\n)(.*?)(\n\s*</ul>)',
     re.S,
 )
 
@@ -57,9 +57,9 @@ for path in all_html:
         for ts, tn in TOWNS:
             t_slug = pick_town_target(ts)
             if t_slug:
-                items.append(f'{indent}<li><a class="site-footer__link-item--gold-hover" href="{prefix}{t_slug}/">{tn}, NC</a></li>')
+                items.append(f'{indent}<li><a class="site-footer__link-item" href="{prefix}{t_slug}/">{tn}, NC</a></li>')
             else:
-                items.append(f'{indent}<li><span class="site-footer__link-item--muted">{tn}, NC</span></li>')
+                items.append(f'{indent}<li><span class="site-footer__link-item site-footer__link-item--muted">{tn}, NC</span></li>')
         return m.group(1) + "\n".join(items) + m.group(3)
 
     src = footer_pat.sub(repl_footer, src)

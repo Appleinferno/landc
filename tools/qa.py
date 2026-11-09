@@ -4,6 +4,9 @@ from urllib.parse import urlparse
 ROOT = r"h:\Websites\landc\charlotte-land-clearing"
 BASE = "https://landclearingcharlotte.com"
 LEGAL = {"privacy-policy", "cookies-policy", "terms-and-conditions"}
+# Approved numbers: (704) 741-6895 primary, (828) 576-3931 after-hours
+ALLOWED_TELS = {"7047416895", "8285763931"}
+ALLOWED_SCHEMA_TELS = {"+1-704-741-6895", "+1-828-576-3931"}
 
 pages = sorted(glob.glob(os.path.join(ROOT, "**", "index.html"), recursive=True))
 pages = [p for p in pages if "_shot" not in p]
@@ -51,13 +54,13 @@ for p in pages:
         except Exception as e:
             issues.append((rel, f"JSON-LD: {e}"))
     for bad in re.findall(r"\(?\d{3}\)?[ .-]?\d{3}-\d{4}", re.sub(r'placeholder="[^"]*"', "", c)):
-        if bad not in ("(828) 576-3931",) and not bad.endswith("576-3931"):
+        if not (bad.endswith("576-3931") or bad.endswith("741-6895")):
             issues.append((rel, f"phone {bad}"))
     for t in re.findall(r'href="tel:([^"]+)"', c):
-        if t != "8285763931":
+        if t not in ALLOWED_TELS:
             issues.append((rel, f"tel {t}"))
     for t in re.findall(r'"telephone":\s*"([^"]+)"', c):
-        if t != "+1-828-576-3931":
+        if t not in ALLOWED_SCHEMA_TELS:
             issues.append((rel, f"schema tel {t}"))
     title = re.search(r"<title>(.*?)</title>", c, re.S).group(1)
     if folder.endswith("-nc") and not re.match(r".+ in .+, NC \| Land Clearing Charlotte$", title):

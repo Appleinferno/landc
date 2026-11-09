@@ -152,7 +152,7 @@ Same skeleton, different depth.
 
 | # | Section | Pillar (deeper) | Child (tighter, 100% unique copy) |
 |---|---|---|---|
-| 1 | **Title tag + meta** | `{Service} in {City}, {ST} \| Land Clearing Charlotte` | Same formula; the meta mentions a local landmark or drive time |
+| 1 | **Title tag + meta** | `{Service} in Charlotte, NC \| {Secondary Keyword from H2s}` | `{Service} in {City}, {ST} \| Call (828) 576-3931`; the meta mentions a local landmark or drive time |
 | 2 | **Hero (split)** | Left: H1 `{Service} in {City}, {ST}` + intro. Right: **estimate form above the fold** + call button | Same layout; intro written for the town |
 | 3 | **Trust bar** | Rating · reviews · owner on every job · insured | Local version: "Trusted across {City} · ~{X} min from {landmark}" |
 | 4 | **H2: What Our Process Is** | Intro + **4 numbered step cards** + supporting copy | Short process copy specific to the town |
@@ -242,7 +242,7 @@ Sub-services: Land Clearing 8 + Forestry Mulching 8 + Brush Clearing 6 = **22** 
 | Page | Action |
 |---|---|
 | `/` (homepage) | Replace 6 service cards with 3 silo cards; add a "Services" dropdown; repoint `#estimate-form` service links to the pillars |
-| `/lot-clearing-tips/` | Keep as the blog hub; articles link to the matching sub-service pillar (card-style "related service" block) |
+| `/lot-clearing-tips/` | Keep as the blog hub with 3 planned guide placeholders (Land Clearing Cost, Land Clearing Equipment, and Land Clearing in Western North Carolina); when published, articles link to the matching sub-service pillar (card-style "related service" block) |
 | `/privacy-policy/`, `/cookies-policy/`, `/terms-and-conditions/` | Keep; footer only |
 
 ## 13. Pre-publish checklist (every page)

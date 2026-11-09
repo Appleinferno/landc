@@ -35,7 +35,7 @@ def render_city(p, built=None):
     checks = "\n".join(f"            <li>{x}</li>" for x in p["checks"])
     trust = trust_bar([
         ("person", "Owner on Every Job", p["trust_sub"][0]),
-        ("shield", "Licensed &amp; Insured", p["trust_sub"][1]),
+        ("shield", "Fully Insured", p["trust_sub"][1]),
         ("doc", "Free On-Site Estimates", p["trust_sub"][2]),
         tuple(p["trust4"]),
     ])
@@ -91,7 +91,7 @@ def render_city(p, built=None):
           </div>
           <div class="svc-hero__actions">
             <a class="svc-btn svc-btn--gold" href="#estimate">Get My Free Estimate</a>
-            <a class="svc-btn svc-btn--ghost" href="tel:8285763931">Call (828) 576-3931</a>
+            <a class="svc-btn svc-btn--ghost" href="tel:7047416895">Call (704) 741-6895</a>
           </div>
           <ul class="svc-hero__checks">
 {checks}
@@ -150,6 +150,19 @@ def render_city(p, built=None):
           </div>
           <div class="svc-split__media">
 {figs}
+            <div class="svc-price-card" aria-label="Per-Acre Price Guide">
+              <span class="svc-price-card__badge">Quick Price Guide</span>
+              <strong class="svc-price-card__amount">$2,000 – $8,000 <span>per acre</span></strong>
+              <span class="svc-price-card__sub">Typical range depending on property conditions. Stump grinding and full stump removal are quoted separately.</span>
+              <span class="svc-price-card__label">What Changes the Price:</span>
+              <ul class="svc-price-card__list">
+                <li><strong>Brush density:</strong> Light saplings vs. thick briars and vines.</li>
+                <li><strong>Trees over 8&Prime; thick:</strong> How many larger trees need removal.</li>
+                <li><strong>Slope &amp; terrain:</strong> Flat ground vs. steep banks or gullies.</li>
+                <li><strong>Rocks &amp; obstacles:</strong> Surface rock, tight access, or structures to work around.</li>
+              </ul>
+              <a class="svc-price-card__link" href="../land-clearing-cost-calculator/">Try the Cost Calculator &rarr;</a>
+            </div>
             <div class="svc-callout">
               <h3>{co[0]}</h3>
               <p>{co[1]}</p>
