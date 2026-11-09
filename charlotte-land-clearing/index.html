@@ -36,7 +36,7 @@
   <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="images/logo/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css?v=20261108">
+  <link rel="stylesheet" href="style.css?v=20261109b">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1203,132 +1203,113 @@
     </section>
 
     <!-- =======================================================================
-         ROOT NODE: customer-reviews (Purpose: Verified Trustpilot customer feedback)
+         ROOT NODE: customer-reviews (Purpose: Customer reviews, static HTML cards)
          ======================================================================= -->
     <section class="customer-reviews" id="reviews" aria-labelledby="reviews-heading">
       <div class="customer-reviews__container-inner">
 
         <div class="customer-reviews__head-zone">
-          <span class="customer-reviews__eyebrow--gold-underline">Verified Customer Feedback</span>
+          <span class="customer-reviews__eyebrow--gold-underline">Customer Reviews</span>
           <h2 class="customer-reviews__heading--navy-clamp" id="reviews-heading">
-            Customer Reviews for Land Clearing Charlotte
+            What Charlotte-Area Landowners Say
           </h2>
           <p class="customer-reviews__lead--slate">
-            Clear communication, thorough property walkthroughs, and honest pricing on every estimate. Read what local property owners say on <a href="https://www.trustpilot.com/review/landclearingcharlotte.com" target="_blank" rel="noopener noreferrer">Trustpilot</a>.
+            Clear communication, thorough property walkthroughs, and honest pricing on every estimate.
           </p>
+          <!--
+            RATING SUMMARY: update this by hand whenever a review is added or removed.
+            Keep the average and the count matching the real Trustpilot profile.
+            Google: swap the link below for "<strong>X.X</strong> on Google · N reviews" once you want to show a rating.
+          -->
+          <div class="customer-reviews__summary">
+            <p class="customer-reviews__summary-item customer-reviews__summary-item--trustpilot">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <strong>5.0</strong> on Trustpilot &middot; 2 reviews
+            </p>
+            <a class="customer-reviews__summary-item customer-reviews__summary-item--link" href="https://share.google/YZqRTas9q2iX93HOT" target="_blank" rel="noopener">
+              <span class="customer-reviews__g-mark" aria-hidden="true">G</span>
+              See our Google Business Profile <span aria-hidden="true">&#8599;</span><span class="customer-reviews__sr-only"> (opens in a new tab)</span>
+            </a>
+          </div>
         </div>
 
-        <div class="customer-reviews__grid">
-
-          <!-- Featured Trustpilot Review Card 1 -->
-          <article class="customer-reviews__card--featured" aria-label="Customer review by Caleb Dinehart">
-            <div class="customer-reviews__reviewer-header">
-              <div class="customer-reviews__reviewer-profile">
-                <span class="customer-reviews__avatar" aria-hidden="true">CD</span>
-                <div class="customer-reviews__reviewer-info">
-                  <strong class="customer-reviews__reviewer-name">Caleb Dinehart</strong>
-                  <span class="customer-reviews__reviewer-meta">US &bull; 1 review</span>
-                </div>
+        <!--
+          REVIEW CARDS: plain HTML, no JavaScript.
+          To add a review: copy one <figure> block, then edit the stars, text, name ("First L."), town, service, and date.
+          - data-count on the grid: 1, 2, or 3 (use 3 for 3 or more reviews). It controls the column layout.
+          - Only include the bold <p class="customer-reviews__quote-title"> when the headline differs from the review text.
+          - Long text is cut off after 4 lines automatically. Readers use "See all reviews on Trustpilot" for the full text.
+          - Optional job photo: add this as the FIRST element inside the <figure>:
+              <div class="customer-reviews__photo">
+                <img src="images/your-photo.jpg" alt="Describe the job" width="640" height="400" loading="lazy" decoding="async">
+                <span class="customer-reviews__photo-label">Before / after</span>
               </div>
-              <span class="customer-reviews__date">October 21, 2026</span>
-            </div>
+          - Update the rating summary above, and do NOT add Review or AggregateRating schema for these.
+        -->
+        <div class="customer-reviews__grid" data-count="2">
 
-            <div class="customer-reviews__stars-row" aria-label="Rated 5 out of 5 stars on Trustpilot">
-              <div class="customer-reviews__tp-stars" aria-hidden="true">
-                <span class="customer-reviews__tp-star-box"><svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
-                <span class="customer-reviews__tp-star-box"><svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
-                <span class="customer-reviews__tp-star-box"><svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
-                <span class="customer-reviews__tp-star-box"><svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
-                <span class="customer-reviews__tp-star-box"><svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+          <figure class="customer-reviews__card">
+            <div class="customer-reviews__card-top">
+              <div class="customer-reviews__stars" role="img" aria-label="Rated 5 out of 5 stars">
+                <span class="customer-reviews__star-box"><svg viewBox="0 0 24 24" width="14" height="14" fill="#FFFFFF" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+                <span class="customer-reviews__star-box"><svg viewBox="0 0 24 24" width="14" height="14" fill="#FFFFFF" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+                <span class="customer-reviews__star-box"><svg viewBox="0 0 24 24" width="14" height="14" fill="#FFFFFF" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+                <span class="customer-reviews__star-box"><svg viewBox="0 0 24 24" width="14" height="14" fill="#FFFFFF" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+                <span class="customer-reviews__star-box"><svg viewBox="0 0 24 24" width="14" height="14" fill="#FFFFFF" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
               </div>
-              <span class="customer-reviews__verified-pill">Unprompted review</span>
+              <span class="customer-reviews__source customer-reviews__source--trustpilot">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span class="customer-reviews__sr-only">Posted on </span>Trustpilot
+              </span>
             </div>
-
-            <h3 class="customer-reviews__quote-title">
-              &ldquo;Their professionalism, communication, and entire quote process were absolutely perfect.&rdquo;
-            </h3>
-
-            <blockquote class="customer-reviews__quote-body">
-              <p>
-                &ldquo;I reached out to Land Clearing Charlotte for an estimate on a land clearing project and had a great experience with their team. The crew was professional, knowledgeable, and helpful throughout the quote process...&rdquo;
-              </p>
+            <blockquote class="customer-reviews__quote" cite="https://www.trustpilot.com/review/landclearingcharlotte.com">
+              <p class="customer-reviews__quote-title">&ldquo;Their professionalism, communication, and entire quote process were absolutely perfect.&rdquo;</p>
+              <p class="customer-reviews__quote-text">&ldquo;I reached out to Land Clearing Charlotte for an estimate on a land clearing project and had a great experience with their team. The crew was professional, knowledgeable, and helpful throughout the quote process&mdash;answering our questions about equipment access, utilities, property boundaries, vegetation removal, forestry mulching, and general site preparation. If you're looking for a land clearing company in Charlotte, NC, or surrounding areas like Huntersville, Monroe, and Fort Mill, they're worth contacting for an estimate.&rdquo;</p>
             </blockquote>
+            <figcaption class="customer-reviews__caption">
+              <strong class="customer-reviews__name">Caleb D.</strong>
+              <span class="customer-reviews__meta">Charlotte, NC &middot; Land clearing estimate</span>
+              <time class="customer-reviews__date" datetime="2026-10-21">Oct 21, 2026</time>
+            </figcaption>
+          </figure>
 
-            <div class="customer-reviews__card-footer">
-              <a class="customer-reviews__tp-inline-link" href="https://www.trustpilot.com/review/landclearingcharlotte.com" target="_blank" rel="noopener noreferrer">
-                Read full review on Trustpilot <span aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </article>
-
-          <!-- Featured Trustpilot Review Card 2 -->
-          <article class="customer-reviews__card--featured" aria-label="Customer review by Paden Langner">
-            <div class="customer-reviews__reviewer-header">
-              <div class="customer-reviews__reviewer-profile">
-                <span class="customer-reviews__avatar customer-reviews__avatar--slate" aria-hidden="true">P</span>
-                <div class="customer-reviews__reviewer-info">
-                  <strong class="customer-reviews__reviewer-name">Paden Langner</strong>
-                  <span class="customer-reviews__reviewer-meta">US &bull; 2 reviews</span>
-                </div>
+          <figure class="customer-reviews__card">
+            <div class="customer-reviews__card-top">
+              <div class="customer-reviews__stars" role="img" aria-label="Rated 5 out of 5 stars">
+                <span class="customer-reviews__star-box"><svg viewBox="0 0 24 24" width="14" height="14" fill="#FFFFFF" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+                <span class="customer-reviews__star-box"><svg viewBox="0 0 24 24" width="14" height="14" fill="#FFFFFF" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+                <span class="customer-reviews__star-box"><svg viewBox="0 0 24 24" width="14" height="14" fill="#FFFFFF" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+                <span class="customer-reviews__star-box"><svg viewBox="0 0 24 24" width="14" height="14" fill="#FFFFFF" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+                <span class="customer-reviews__star-box"><svg viewBox="0 0 24 24" width="14" height="14" fill="#FFFFFF" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
               </div>
-              <span class="customer-reviews__date">October 12, 2026</span>
+              <span class="customer-reviews__source customer-reviews__source--trustpilot">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span class="customer-reviews__sr-only">Posted on </span>Trustpilot
+              </span>
             </div>
-
-            <div class="customer-reviews__stars-row" aria-label="Rated 5 out of 5 stars on Trustpilot">
-              <div class="customer-reviews__tp-stars" aria-hidden="true">
-                <span class="customer-reviews__tp-star-box"><svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
-                <span class="customer-reviews__tp-star-box"><svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
-                <span class="customer-reviews__tp-star-box"><svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
-                <span class="customer-reviews__tp-star-box"><svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
-                <span class="customer-reviews__tp-star-box"><svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
-              </div>
-              <span class="customer-reviews__verified-pill">Unprompted review</span>
-            </div>
-
-            <h3 class="customer-reviews__quote-title">
-              &ldquo;Great quote for brush clear outs and...&rdquo;
-            </h3>
-
-            <blockquote class="customer-reviews__quote-body">
-              <p>
-                &ldquo;Great quote for brush clear outs and some tree removal!!&rdquo;
-              </p>
+            <blockquote class="customer-reviews__quote" cite="https://www.trustpilot.com/review/landclearingcharlotte.com">
+              <p class="customer-reviews__quote-text">&ldquo;Great quote for brush clear outs and some tree removal!!&rdquo;</p>
             </blockquote>
+            <figcaption class="customer-reviews__caption">
+              <strong class="customer-reviews__name">Paden L.</strong>
+              <span class="customer-reviews__meta">Taylorsville, NC &middot; Brush clearing &amp; tree removal</span>
+              <time class="customer-reviews__date" datetime="2026-10-12">Oct 12, 2026</time>
+            </figcaption>
+          </figure>
 
-            <div class="customer-reviews__card-footer">
-              <a class="customer-reviews__tp-inline-link" href="https://www.trustpilot.com/review/landclearingcharlotte.com" target="_blank" rel="noopener noreferrer">
-                Read full review on Trustpilot <span aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </article>
+        </div>
 
-          <!-- Trustpilot Profile & Review CTA Card -->
-          <aside class="customer-reviews__card--cta" aria-label="Trustpilot Profile Link">
-            <div class="customer-reviews__tp-brand">
-              <svg class="customer-reviews__tp-logo-mark" viewBox="0 0 24 24" width="28" height="28" fill="#00B67A" aria-hidden="true">
-                <path d="M12 1.5l3.24 6.57 7.26 1.05-5.25 5.12 1.24 7.23L12 18.06l-6.49 3.41 1.24-7.23L1.5 9.12l7.26-1.05L12 1.5z"/>
-              </svg>
-              <span class="customer-reviews__tp-wordmark">Trustpilot</span>
-            </div>
+        <p class="customer-reviews__all-link-row">
+          <a class="customer-reviews__all-link" href="https://www.trustpilot.com/review/landclearingcharlotte.com" target="_blank" rel="noopener">
+            See all reviews on Trustpilot <span aria-hidden="true">&#8599;</span><span class="customer-reviews__sr-only"> (opens in a new tab)</span>
+          </a>
+        </p>
 
-            <h3 class="customer-reviews__cta-heading">See Our Profile or Leave a Review</h3>
-            <p class="customer-reviews__cta-text">
-              Have we walked your property, provided a land clearing estimate, or mulched your lot? We value honest feedback from homeowners, builders, and landowners across the Charlotte metro.
-            </p>
-
-            <a class="customer-reviews__cta-btn--tp" href="https://www.trustpilot.com/review/landclearingcharlotte.com" target="_blank" rel="noopener noreferrer">
-              <span>Review Us on Trustpilot</span>
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M7 17L17 7"/>
-                <path d="M7 7h10v10"/>
-              </svg>
-            </a>
-
-            <a class="customer-reviews__cta-secondary" href="#estimate-form">
-              Need an estimate first? Request a free walkthrough &rarr;
-            </a>
-          </aside>
-
+        <div class="customer-reviews__cta-row">
+          <a class="customer-reviews__cta-btn--gold" href="#estimate-form">Get a Free Property Walkthrough</a>
+          <a class="customer-reviews__cta-review-link" href="https://www.trustpilot.com/evaluate/landclearingcharlotte.com" target="_blank" rel="noopener">
+            Past customer? Leave a review <span aria-hidden="true">&rarr;</span><span class="customer-reviews__sr-only"> (opens Trustpilot in a new tab)</span>
+          </a>
         </div>
 
       </div>

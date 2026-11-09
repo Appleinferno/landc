@@ -1588,9 +1588,7 @@ img {
 
 /* --- Column 5: "Get in Touch" card --- */
 .site-footer__contact-card {
-  background:
-    radial-gradient(120% 60% at 100% 0%, rgba(242, 200, 75, 0.09), rgba(242, 200, 75, 0) 60%),
-    linear-gradient(180deg, rgba(20, 34, 58, 0.92), rgba(12, 22, 40, 0.94));
+  background: linear-gradient(180deg, rgba(20, 34, 58, 0.92), rgba(12, 22, 40, 0.94));
   border: 2px solid var(--clc-gold);
   border-radius: 20px;
   padding: 22px;
@@ -1798,14 +1796,14 @@ img {
    permanently expanded with no JS.
    ========================================================================== */
 @media (min-width: 901px) {
-  /* Pine treeline (the mobile design has no trees) */
+  /* Foggy pine treeline (images/footer-treeline.svg), low and to the right so it fills the space under the link columns and behind the contact card (the mobile design has no trees) */
   .site-footer::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 220' preserveAspectRatio='xMidYMax meet'%3E%3Cdefs%3E%3ClinearGradient id='f' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%230a1424' stop-opacity='.5'/%3E%3Cstop offset='1' stop-color='%23070e1b' stop-opacity='.95'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='%2314243f' fill-opacity='.55' d='M38 127L45 140L40 137L47 153L41 150L49 166L42 164L51 180L42 177L53 193L43 190L54 206L40 219L36 219L21 206L32 190L23 193L33 177L25 180L34 164L26 166L34 150L28 153L35 137L30 140ZM99 122L107 136L102 133L109 149L103 147L111 163L103 160L113 177L104 174L115 191L105 188L117 205L101 219L97 219L82 205L94 188L84 191L94 174L85 177L95 160L87 163L96 147L89 149L96 133L91 136ZM151 156L156 164L153 163L157 172L153 171L158 181L154 179L159 189L154 187L160 197L154 195L161 205L152 213L150 213L141 205L148 195L142 197L148 187L143 189L149 179L144 181L149 171L145 172L149 163L146 164ZM181 113L190 131L184 128L193 149L185 146L195 167L186 164L197 185L187 182L200 203L183 218L179 218L162 203L175 182L165 185L176 164L167 167L177 146L170 149L178 128L172 131ZM283 92L293 110L286 106L295 127L287 124L298 145L288 141L300 163L289 159L302 180L290 177L305 198L285 215L280 215L261 198L276 177L263 180L276 159L265 163L277 141L268 145L278 124L270 127L279 106L273 110ZM361 97L370 113L364 110L372 130L365 127L375 147L366 143L377 164L366 160L379 181L367 177L382 197L363 214L358 214L339 197L354 177L342 181L355 160L344 164L355 143L346 147L356 127L349 130L357 110L351 113ZM378 89L388 107L381 103L391 125L382 121L393 143L383 140L396 162L384 158L398 180L385 176L401 198L380 216L375 216L355 198L370 176L357 180L371 158L360 162L372 140L362 143L373 121L365 125L374 103L367 107ZM434 109L442 126L437 123L445 144L438 141L447 162L438 159L450 180L439 176L452 197L436 212L431 212L415 197L428 176L417 180L429 159L420 162L429 141L422 144L430 123L425 126ZM454 127L462 142L457 139L464 157L458 154L466 172L458 169L468 187L459 184L470 202L456 214L452 214L439 202L449 184L441 187L450 169L443 172L451 154L445 157L452 139L447 142ZM513 91L524 112L517 108L527 133L518 129L529 154L519 150L532 175L520 172L535 196L516 214L510 214L491 196L506 172L494 175L507 150L497 154L508 129L500 133L509 108L502 112ZM532 39L548 69L538 64L552 99L539 94L556 129L541 124L560 159L542 154L564 189L536 214L529 214L501 189L523 154L505 159L524 124L509 129L526 94L513 99L527 64L517 69ZM548 121L557 138L552 135L559 155L552 152L562 172L553 169L564 189L554 186L566 206L551 220L546 220L531 206L543 186L533 189L544 169L535 172L545 152L538 155L545 135L540 138ZM576 114L584 132L579 129L587 149L580 146L589 167L580 164L592 184L581 181L594 202L578 216L573 216L557 202L570 181L560 184L571 164L562 167L571 146L564 149L572 129L567 132ZM594 69L606 95L598 90L610 120L599 116L613 145L601 141L617 171L602 166L620 196L597 217L590 217L567 196L585 166L571 171L587 141L574 145L588 116L577 120L589 90L581 95ZM760 114L768 126L763 123L770 138L764 135L772 150L764 147L773 162L765 159L775 174L766 171L776 186L766 183L778 198L763 212L758 212L743 198L755 183L744 186L755 171L746 174L756 159L748 162L756 147L749 150L757 135L751 138L758 123L753 126ZM794 79L806 103L799 99L809 127L800 123L813 151L801 146L816 174L802 170L819 198L797 218L791 218L769 198L786 170L773 174L788 146L776 151L789 123L779 127L790 99L782 103ZM839 91L848 107L842 103L851 122L843 118L853 137L844 134L855 153L844 149L857 168L845 164L859 183L846 180L861 199L841 216L836 216L816 199L831 180L818 183L832 164L820 168L833 149L822 153L833 134L824 137L834 118L827 122L835 103L829 107Z'/%3E%3Cpath fill='url%28%23f%29' d='M20 160L25 167L22 165L26 174L22 173L27 182L22 180L28 189L23 187L29 196L23 195L30 204L24 202L31 211L21 219L19 219L9 211L16 202L10 204L17 195L11 196L17 187L12 189L18 180L13 182L18 173L14 174L18 165L15 167ZM55 159L60 169L57 167L62 179L57 178L63 190L58 188L64 200L58 198L66 210L56 219L54 219L44 210L52 198L46 200L52 188L47 190L53 178L48 179L53 167L50 169ZM82 144L89 157L85 154L91 170L85 167L92 183L86 181L94 196L87 194L96 209L84 220L81 220L69 209L78 194L70 196L79 181L72 183L79 167L74 170L80 154L76 157ZM125 131L133 146L128 143L135 161L129 158L137 176L129 173L139 191L130 188L141 206L127 218L123 218L110 206L120 188L112 191L121 173L114 176L122 158L116 161L123 143L118 146ZM210 125L217 136L212 133L218 146L213 144L219 157L213 154L221 168L214 165L222 178L214 176L224 189L215 186L225 199L212 211L208 211L194 199L205 186L196 189L205 176L197 178L206 165L199 168L206 154L200 157L207 144L201 146L207 133L203 136ZM234 122L242 136L237 133L244 149L237 147L245 163L238 160L247 177L239 174L249 191L239 188L251 205L236 218L232 218L216 205L228 188L218 191L229 174L220 177L230 160L222 163L230 147L224 149L231 133L226 136ZM252 122L260 133L255 130L261 144L256 141L263 155L256 152L264 166L257 163L266 177L257 175L267 188L258 186L269 200L254 212L251 212L236 200L247 186L238 188L248 175L239 177L248 163L241 166L249 152L242 155L249 141L244 144L250 130L245 133ZM300 142L306 152L302 149L307 161L303 159L309 171L303 168L310 180L304 178L311 190L304 187L313 199L304 197L314 209L302 219L298 219L286 209L295 197L287 199L296 187L289 190L296 178L290 180L297 168L291 171L297 159L292 161L298 149L294 152ZM329 82L340 101L333 97L342 121L334 117L345 140L334 136L348 159L335 155L350 179L336 175L353 198L331 217L326 217L304 198L321 175L307 179L322 155L309 159L323 136L312 140L324 117L315 121L325 97L317 101ZM395 94L404 108L398 105L406 123L399 119L408 137L400 134L410 152L401 148L412 166L401 163L414 181L402 177L416 195L398 212L392 212L374 195L388 177L376 181L389 163L378 166L389 148L380 152L390 134L382 137L391 119L384 123L392 105L386 108ZM416 97L426 117L420 113L428 136L420 133L431 156L421 152L434 175L422 172L436 195L418 210L414 210L396 195L410 172L398 175L411 152L401 156L412 133L404 136L413 113L406 117ZM483 84L493 101L487 97L496 118L487 114L498 134L488 130L500 151L489 147L502 167L490 163L505 184L491 180L507 201L486 219L480 219L458 201L475 180L461 184L476 163L463 167L476 147L465 151L477 130L467 134L478 114L470 118L479 97L472 101ZM611 103L621 123L615 120L624 143L616 139L627 163L617 159L629 183L618 179L632 202L614 218L609 218L591 202L605 179L593 183L606 159L596 163L607 139L599 143L608 120L602 123ZM631 47L644 67L636 62L647 87L637 83L650 108L638 103L652 128L639 123L655 148L640 143L658 168L641 163L661 188L635 211L628 211L602 188L622 163L604 168L623 143L607 148L623 123L610 128L624 103L613 108L625 83L615 87L626 62L618 67ZM653 86L664 108L657 104L667 130L658 126L670 152L659 148L673 174L660 171L676 197L655 215L650 215L629 197L645 171L632 174L646 148L635 152L647 126L638 130L648 104L641 108ZM675 107L683 120L678 117L685 133L679 130L687 146L679 143L689 159L680 156L691 173L681 169L692 186L681 182L694 199L677 214L673 214L656 199L669 182L658 186L669 169L659 173L670 156L661 159L671 143L663 146L671 130L665 133L672 117L666 120ZM706 44L719 65L710 60L722 86L711 81L724 106L712 101L727 127L713 122L730 147L714 142L733 168L715 163L736 188L709 212L702 212L675 188L696 163L678 168L697 142L681 147L698 122L684 127L699 101L687 106L700 81L689 86L701 60L692 65ZM736 112L744 126L739 123L746 140L740 137L748 154L740 151L750 168L741 165L752 182L742 179L754 196L738 210L734 210L718 196L730 179L720 182L731 165L722 168L732 151L724 154L732 137L726 140L733 123L728 126ZM816 99L826 114L820 110L828 129L821 125L830 143L821 140L832 158L822 155L834 173L823 170L836 188L823 184L838 203L819 220L814 220L795 203L809 184L797 188L810 170L799 173L811 155L801 158L811 140L803 143L812 125L805 129L813 110L807 114ZM868 123L876 134L871 132L877 146L871 143L879 157L872 155L880 169L872 166L882 181L873 178L883 192L874 189L885 204L870 217L866 217L851 204L863 189L853 192L863 178L854 181L864 166L856 169L864 155L857 157L865 143L859 146L865 132L861 134ZM891 112L900 130L894 127L903 148L895 145L905 167L896 163L908 185L897 182L910 203L893 218L889 218L872 203L885 182L874 185L886 163L877 167L887 145L879 148L888 127L882 130ZM908 111L916 123L911 120L918 136L911 133L919 149L912 146L921 161L912 158L923 174L913 171L924 187L914 184L926 199L910 214L905 214L889 199L902 184L891 187L902 171L893 174L903 158L894 161L903 146L896 149L904 133L898 136L905 120L899 123ZM941 119L950 136L944 133L952 153L945 150L955 171L946 168L957 188L947 185L959 205L943 219L939 219L923 205L936 185L926 188L937 168L928 171L937 150L930 153L938 133L933 136ZM972 126L980 142L975 139L982 158L975 155L984 174L976 171L986 190L977 187L988 206L974 219L970 219L955 206L966 187L957 190L967 171L959 174L968 155L962 158L969 139L964 142Z'/%3E%3C/svg%3E") no-repeat right 26% bottom 70px / min(1100px, 92%) auto;
+    background: url("images/footer-treeline.svg") no-repeat right max(2.5vw, calc((100vw - 1600px) / 2 + 40px)) bottom 72px / min(900px, 62%) auto;
   }
 
   .site-footer__accordion::details-content {
@@ -1819,6 +1817,10 @@ img {
 
 /* --- Bottom bar stacks once its three parts can't share one line --- */
 @media (max-width: 1399px) {
+  /* Stacked bottom bar is taller: keep the treeline sitting on its top rule */
+  .site-footer::before {
+    background-position-y: bottom 166px;
+  }
   .site-footer__bottom-row {
     flex-direction: column;
     text-align: center;
@@ -5218,9 +5220,12 @@ form[data-estimate-form] button[aria-busy="true"] {
 }
 
 /* ==========================================================================
-   NODE: customer-reviews (Purpose: Verified Trustpilot customer feedback)
+   NODE: customer-reviews (Purpose: Customer reviews, static HTML cards)
    ========================================================================== */
 .customer-reviews {
+  --cr-green: #00A86F;       /* star boxes: 3.07:1 on white (non-text AA) */
+  --cr-green-text: #00754F;  /* green text: 5.7:1 on white (AA) */
+  --cr-gap: clamp(20px, 2.5vw, 32px);
   background: #FFFFFF;
   padding: clamp(60px, 7vw, 96px) 0;
   border-top: 1px solid var(--clc-border-subtle);
@@ -5233,9 +5238,21 @@ form[data-estimate-form] button[aria-busy="true"] {
   padding: 0 clamp(16px, 3.5vw, 48px);
 }
 
+.customer-reviews__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .customer-reviews__head-zone {
   max-width: 780px;
-  margin: 0 auto 44px;
+  margin: 0 auto 40px;
   text-align: center;
 }
 
@@ -5256,7 +5273,7 @@ form[data-estimate-form] button[aria-busy="true"] {
   font-size: clamp(1.8rem, 3.4vw, 2.5rem);
   font-weight: 800;
   line-height: 1.18;
-  margin: 0 0 16px;
+  margin: 0 0 14px;
 }
 
 .customer-reviews__lead--slate {
@@ -5266,279 +5283,348 @@ form[data-estimate-form] button[aria-busy="true"] {
   margin: 0;
 }
 
-.customer-reviews__lead--slate a {
+/* Rating summary row (Trustpilot now; Google slot when totals are added) */
+.customer-reviews__summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 12px;
+  margin-top: 20px;
+}
+
+.customer-reviews__summary-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--clc-tint);
+  border: 1px solid var(--clc-border-subtle);
   color: var(--clc-navy);
-  font-weight: 700;
-  text-decoration: underline;
-  text-decoration-color: #00B67A;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
-.customer-reviews__lead--slate a:hover {
-  text-decoration-color: var(--clc-navy);
+.customer-reviews__summary-item strong {
+  font-weight: 800;
 }
 
+.customer-reviews__summary-item--trustpilot svg {
+  color: var(--cr-green-text);
+  flex-shrink: 0;
+}
+
+.customer-reviews__summary-item--link {
+  text-decoration: none;
+  transition: background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.customer-reviews__summary-item--link:hover {
+  background: #FFFFFF;
+  border-color: var(--clc-navy);
+}
+
+.customer-reviews__g-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid var(--clc-border-subtle);
+  color: #1A73E8;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* Grid: 3 across with 3+ reviews, 2 centered with 2, stacked on mobile */
 .customer-reviews__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(20px, 2.5vw, 32px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: var(--cr-gap);
   max-width: 1280px;
   margin: 0 auto;
-  align-items: stretch;
 }
 
-.customer-reviews__card--featured {
-  position: relative;
+.customer-reviews__grid > .customer-reviews__card {
+  flex: 0 1 calc((100% - 2 * var(--cr-gap)) / 3);
+  min-width: 0;
+}
+
+.customer-reviews__grid[data-count="2"] {
+  max-width: 940px;
+}
+
+.customer-reviews__grid[data-count="2"] > .customer-reviews__card {
+  flex-basis: calc((100% - var(--cr-gap)) / 2);
+}
+
+.customer-reviews__grid[data-count="1"] {
+  max-width: 600px;
+}
+
+.customer-reviews__grid[data-count="1"] > .customer-reviews__card {
+  flex-basis: 100%;
+}
+
+.customer-reviews__card {
+  margin: 0;
   background: #FFFFFF;
   border: 1.5px solid var(--clc-border-subtle);
-  border-top: 5px solid #00B67A;
+  border-top: 5px solid var(--cr-green);
   border-radius: 16px;
-  padding: clamp(26px, 3.5vw, 38px);
   box-shadow: var(--clc-shadow-card);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  --cr-pad: clamp(24px, 3vw, 34px);
+  padding: var(--cr-pad);
 }
 
-.customer-reviews__reviewer-header {
+/* Optional job photo (before/after); only rendered when a photo is provided */
+.customer-reviews__photo {
+  position: relative;
+  margin: calc(-1 * var(--cr-pad)) calc(-1 * var(--cr-pad)) 20px;
+  aspect-ratio: 16 / 10;
+  background: var(--clc-tint);
+}
+
+.customer-reviews__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.customer-reviews__photo-label {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(27, 43, 72, 0.88);
+  color: #FFFFFF;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.customer-reviews__card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   flex-wrap: wrap;
-  padding-bottom: 16px;
-  margin-bottom: 16px;
-  border-bottom: 1px solid #EDF2F7;
+  margin-bottom: 18px;
 }
 
-.customer-reviews__reviewer-profile {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.customer-reviews__avatar {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: #BCF0CB;
-  color: #0F2B1D;
-  font-weight: 800;
-  font-size: 1.02rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.customer-reviews__avatar--slate {
-  background: #4A5B63;
-  color: #FFFFFF;
-}
-
-.customer-reviews__reviewer-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.customer-reviews__reviewer-name {
-  color: var(--clc-navy);
-  font-size: 1.05rem;
-  font-weight: 800;
-  line-height: 1.25;
-}
-
-.customer-reviews__reviewer-meta {
-  color: var(--clc-text);
-  font-size: 0.85rem;
-}
-
-.customer-reviews__date {
-  color: var(--clc-text);
-  font-size: 0.84rem;
-  font-weight: 600;
-  background: var(--clc-tint);
-  border: 1px solid var(--clc-border-subtle);
-  padding: 4px 10px;
-  border-radius: 6px;
-}
-
-.customer-reviews__stars-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 16px;
-}
-
-.customer-reviews__tp-stars {
+.customer-reviews__stars {
   display: inline-flex;
-  gap: 4px;
+  gap: 3px;
 }
 
-.customer-reviews__tp-star-box {
-  width: 28px;
-  height: 28px;
-  background: #00B67A;
+.customer-reviews__star-box {
+  width: 24px;
+  height: 24px;
+  background: var(--cr-green);
   border-radius: 3px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-.customer-reviews__verified-pill {
-  font-size: 0.78rem;
-  font-weight: 700;
+.customer-reviews__source {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   color: var(--clc-navy);
-  background: #EDF2F7;
-  padding: 4px 10px;
-  border-radius: 4px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.customer-reviews__source--trustpilot svg {
+  color: var(--cr-green-text);
+}
+
+.customer-reviews__quote {
+  margin: 0 0 20px;
+  padding: 0;
 }
 
 .customer-reviews__quote-title {
   color: var(--clc-navy);
-  font-size: clamp(1.15rem, 1.8vw, 1.32rem);
+  font-size: clamp(1.08rem, 1.6vw, 1.2rem);
   font-weight: 800;
-  line-height: 1.35;
-  margin: 0 0 12px;
+  line-height: 1.4;
+  margin: 0 0 10px;
 }
 
-.customer-reviews__quote-body {
-  margin: 0 0 20px;
-  padding: 0;
+.customer-reviews__quote-text {
   color: var(--clc-text);
   font-size: 0.98rem;
   line-height: 1.7;
-  flex-grow: 1;
-}
-
-.customer-reviews__quote-body p {
   margin: 0;
 }
 
-.customer-reviews__card-footer {
-  padding-top: 14px;
-  border-top: 1px solid #EDF2F7;
+/* Long reviews are cut off after 4 lines; full text is on Trustpilot */
+.customer-reviews__quote-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  overflow: hidden;
 }
 
-.customer-reviews__tp-inline-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+.customer-reviews__caption {
+  margin-top: auto;            /* pins name/date to the card bottom so cards line up */
+  padding-top: 16px;
+  border-top: 1px solid #EDF2F7;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  column-gap: 12px;
+  row-gap: 2px;
+}
+
+.customer-reviews__name {
+  grid-column: 1;
+  color: var(--clc-navy);
+  font-size: 1.02rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.customer-reviews__meta {
+  grid-column: 1;
+  color: var(--clc-text);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.customer-reviews__date {
+  grid-column: 2;
+  grid-row: 1;
+  color: var(--clc-text);
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Links + CTA row below the grid */
+.customer-reviews__all-link-row {
+  margin: 28px 0 0;
+  text-align: center;
+}
+
+.customer-reviews__all-link {
   color: var(--clc-navy);
   font-weight: 800;
-  font-size: 0.92rem;
-  text-decoration: none;
-  padding: 7px 14px;
-  margin: -5px -14px;
-  border-radius: 999px;
-  background-image: linear-gradient(#00B67A, #00B67A);
-  background-repeat: no-repeat;
-  background-size: calc(100% - 28px) 2px;
-  background-position: center bottom 3px;
-  transition: background-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  text-decoration-color: var(--cr-green);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
-.customer-reviews__tp-inline-link:hover,
-.customer-reviews__tp-inline-link:focus-visible {
-  background-color: var(--clc-navy);
-  background-image: none;
-  color: #FFFFFF;
-  box-shadow: 0 6px 16px rgba(27, 43, 72, 0.22);
-  transform: translateY(-1px);
+.customer-reviews__all-link:hover {
+  text-decoration-color: var(--clc-navy);
 }
 
-.customer-reviews__card--cta {
-  background: var(--clc-navy);
-  color: #FFFFFF;
-  border-radius: 16px;
-  padding: clamp(26px, 3.5vw, 38px);
-  box-shadow: var(--clc-shadow-card);
-  border-top: 5px solid var(--clc-gold);
+.customer-reviews__cta-row {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.customer-reviews__tp-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 16px;
-}
-
-.customer-reviews__tp-wordmark {
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: #FFFFFF;
-}
-
-.customer-reviews__cta-heading {
-  color: #FFFFFF;
-  font-size: clamp(1.3rem, 2vw, 1.5rem);
-  font-weight: 800;
-  line-height: 1.25;
-  margin: 0 0 12px;
-}
-
-.customer-reviews__cta-text {
-  color: #D3DDEB;
-  font-size: 0.96rem;
-  line-height: 1.65;
-  margin: 0 0 24px;
-}
-
-.customer-reviews__cta-btn--tp {
-  display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 14px 24px;
+  gap: 14px 28px;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--clc-border-subtle);
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.customer-reviews__cta-btn--gold {
+  display: inline-block;
+  padding: 15px 32px;
   border-radius: 50px;
-  background: #00B67A;
-  color: #04291D;
-  font-size: 0.98rem;
-  font-weight: 800;
-  text-decoration: none;
-  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  margin-bottom: 16px;
-}
-
-.customer-reviews__cta-btn--tp:hover {
-  background: #00D28D;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 182, 122, 0.35);
-}
-
-.customer-reviews__cta-secondary {
-  color: var(--clc-gold);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
-  align-self: flex-start;
-  border-bottom: 1px solid rgba(242, 200, 75, 0.45);
-  padding-bottom: 2px;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  text-align: center;
+  background: var(--clc-gold);
+  color: var(--clc-navy);
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
 }
 
-.customer-reviews__cta-secondary:hover {
-  color: #FFFFFF;
-  border-color: #FFFFFF;
+.customer-reviews__cta-btn--gold:hover {
+  background: var(--clc-gold-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--clc-shadow-button-hover);
+}
+
+.customer-reviews__cta-review-link {
+  color: var(--clc-navy);
+  font-size: 0.96rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--clc-gold-dark);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.customer-reviews__cta-review-link:hover {
+  text-decoration-color: var(--clc-navy);
+}
+
+/* Visible focus states */
+.customer-reviews a:focus-visible,
+.customer-reviews button:focus-visible {
+  outline: 3px solid var(--clc-navy);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.customer-reviews__cta-btn--gold:focus-visible,
+.customer-reviews__summary-item--link:focus-visible {
+  border-radius: 50px;
 }
 
 @media (max-width: 1080px) {
-  .customer-reviews__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .customer-reviews__card--cta {
-    grid-column: 1 / -1;
+  .customer-reviews__grid > .customer-reviews__card,
+  .customer-reviews__grid[data-count="2"] > .customer-reviews__card {
+    flex-basis: calc((100% - var(--cr-gap)) / 2);
   }
 }
 
-@media (max-width: 720px) {
-  .customer-reviews__grid {
-    grid-template-columns: 1fr;
+@media (max-width: 680px) {
+  .customer-reviews__grid > .customer-reviews__card,
+  .customer-reviews__grid[data-count="2"] > .customer-reviews__card {
+    flex-basis: 100%;
+  }
+  .customer-reviews__cta-row {
+    flex-direction: column;
+  }
+  .customer-reviews__cta-btn--gold {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .customer-reviews__cta-btn--gold,
+  .customer-reviews__summary-item--link {
+    transition: none;
+  }
+  .customer-reviews__cta-btn--gold:hover {
+    transform: none;
   }
 }
 
