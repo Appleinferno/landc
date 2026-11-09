@@ -356,6 +356,10 @@ a.svc-area-card:hover::after { transform: translate(4px, -50%); }
   gap: clamp(32px, 5vw, 72px);
   align-items: start;
 }
+/* Let grid columns shrink below their content's min width (e.g. the method
+   comparison table), so wide content scrolls in its wrapper instead of
+   pushing the whole column past the screen on phones. */
+.svc-split > * { min-width: 0; }
 .svc-split__media { position: sticky; top: 110px; display: flex; flex-direction: column; gap: 20px; }
 .svc-figure { margin: 0; background: #FFFFFF; border-radius: 18px; padding: 10px; box-shadow: var(--clc-shadow-card); }
 .svc-figure img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 12px; }
@@ -550,4 +554,6 @@ a.svc-chip:hover::after { transform: translateX(3px); }
   .svc-group__head { border-radius: 18px; padding: 14px 18px; }
   .svc-group__cta { margin-left: 0; width: 100%; }
   .svc-cta__actions, .svc-cta__actions .svc-btn { width: 100%; }
+  .svc-prose .legal-document__clause-table th,
+  .svc-prose .legal-document__clause-table td { padding: 10px 12px; }
 }
