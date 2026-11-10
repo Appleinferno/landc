@@ -532,6 +532,97 @@ a.svc-chip:hover::after { transform: translateX(3px); }
 .site-navigation__menu-link--navy-hover[aria-current="page"] { color: var(--clc-gold-dark); box-shadow: inset 0 -3px 0 var(--clc-gold); }
 
 /* ==========================================================================
+   ARTICLE TABLE OF CONTENTS (SKIPPABLE H2 JUMPLINKS)
+   ========================================================================== */
+.legal-document__clause-title--navy-bold[id] {
+  scroll-margin-top: 96px;
+}
+.article-toc {
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  border-left: 4px solid var(--clc-navy);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin: 28px 0 34px;
+}
+.article-toc__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #E2E8F0;
+}
+.article-toc__title {
+  color: var(--clc-navy);
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.article-toc__skip {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #475569;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  transition: color .15s ease, border-color .15s ease, background .15s ease;
+}
+.article-toc__skip:hover,
+.article-toc__skip:focus {
+  color: var(--clc-navy);
+  border-color: var(--clc-navy);
+  background: #F1F5F9;
+}
+.article-toc__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 20px;
+}
+.article-toc__item {
+  margin: 0;
+  line-height: 1.45;
+}
+.article-toc__link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  color: var(--clc-navy);
+  font-size: 0.93rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .15s ease;
+}
+.article-toc__link::before {
+  content: "\2192";
+  color: var(--clc-gold-dark, #B7791F);
+  font-weight: 800;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+.article-toc__link:hover {
+  color: #0F172A;
+  text-decoration: underline;
+  text-decoration-color: var(--clc-gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+@media (max-width: 640px) {
+  .article-toc__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
    RESPONSIVE
    ========================================================================== */
 @media (max-width: 1100px) {
