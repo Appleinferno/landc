@@ -7,7 +7,7 @@ BASE = "https://landclearingcharlotte.com"
 EMAIL = "patrick@landclearingcharlotte.com"
 FORM_ENDPOINT = "https://formcarry.com/s/za8glfgKic_"
 # Cache-buster for style.css: bump on every stylesheet change (keep in sync with all pages).
-CSS_VER = "20261108"
+CSS_VER = "20261109b"
 
 _pillar = open(os.path.join(ROOT, "land-clearing-charlotte-nc", "index.html"), encoding="utf-8").read()
 _HEADER_RAW = _pillar[_pillar.index('  <aside class="site-topbar"'):_pillar.index('  <main>')]
