@@ -222,9 +222,13 @@
     });
   });
 
-  // ---- FAQPage schema from visible FAQs ----
+  // ---- FAQPage schema from visible FAQs (skip if static FAQPage already in head) ----
   var items = document.querySelectorAll('.svc-faq__item');
-  if (items.length) {
+  var hasStaticFaq = Array.prototype.some.call(
+    document.querySelectorAll('script[type="application/ld+json"]'),
+    function (s) { return s.textContent.indexOf('"FAQPage"') !== -1; }
+  );
+  if (items.length && !hasStaticFaq) {
     var schema = {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
